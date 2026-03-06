@@ -34,10 +34,33 @@ span{
 
 h3.exercicio2{
     text-align: left;
+    color:#ff7b00;
+}
+
+span.exercicio2{
     color:#fd3a6b;
+    font-size: 16pt;
 }
 p{
     color: #fafc8d;
     line-height: 150%;
     font-size: 14pt;
+}
+a{
+    text-decoration: none;
+    color: #fbff00;
+    font-size: 14pt;
+}
+footer{
+    width: 100%;
+    background-color: #f76505;
+    color: #FFF;
+    text-align: center;
+    font-size: 10pt;
+    padding: 15px;
+}
+.texto{
+    font-size: 23pt;
+    color: #ff7b00;
+    margin-bottom: 15px;
 }
