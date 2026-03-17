@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Municipal de Porto Ferreira</title>
+    <style>
+        body{
+            background-color: #222;
+            color: #FFF;
+        }
+        .formatacao{
+            border: 2px red solid;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+        }
+
+        form input{
+            height: 30px;
+            margin: 10px 10px
+        }
+        form label{
+            margin: 10px;
+            color: rgb(255, 238, 3);
+            font-size: 12pt;
+        }
+        form h2{
+            text-align: center;
+        }
+        .formulario{
+            display: flex;
+            flex-direction: column;
+            align-items: center;padding: 20px;
+        }
+        header{
+            text-align: center;
+        }
+        ul{
+            padding: 15px;
+        }
+        li{
+            padding: 12px;
+            color: yellow;
+            font-weight: 500;
+        }
+
+        .formatacao img{
+            width: 200px;
+            border: 4px #FFF solid;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hospital Municipal de Porto Ferreira</h1>
+    </header>
+    <section>
+        
+        <div class="formulario">
+        <form action="">
+            <h2>Cadastro</h2>
+            <label for="nome">Entre com seu nome:</label>
+            <input type="text" name="nome" id="nome"required>
+            <label for="data">Entre com sua data de nascimento:</label>
+            <input type="date" name="data" id="data"required>
+            <label for="email">Entre com seu e-mail:</label>
+            <input type="email" name="email" id="email" required>
+            <label for="telefone">Entre com seu celular</label>
+            <input type="texto" name="telefone" id="telefone" required>
+        </form>
+        </div>
+        <div class="container">
+            <h2>Sintomas:</h2>
+        <div class="formatacao">
+                
+        <ul>
+            <li>Coriza</li>
+            <li>Febre</li>
+            <li>Caganeira</li>
+            <li>Vontade de demitir</li>
+        </ul>
+        <div class="imagem">
+            <img src="/DesenvolvimentoWEB/1/Exercicios/imgs/madruga.jpg" alt="Morimbundo" srcset="">
+        </div>
+        </div>
+                
+        </div>
+            
+            
+
+        
+    </section>
+    
+    
+</body>
+</html>
