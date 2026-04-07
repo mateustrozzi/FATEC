@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+    :root {
+        --largura-slide: 1000px; /* Altere aqui e tudo se resolve */
+        --altura-slide: 450px;
+    }
+
+    .carrossel {
+        width: var(--largura-slide);
+        height: var(--altura-slide);
+    }
+
+    .item {
+        width: var(--largura-slide);
+        height: var(--altura-slide);
+    }
+
+    .carrossel {
+        overflow: hidden;
+        margin: 50px auto;
+        border: 5px solid #333;
+        position: relative;
+        
+    }
+    .trilho {
+        display: flex;
+        transition: opacity 0.5s ease-in-out; /* Controle total da velocidade aqui */
+    }
+    .item {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .item h2{
+        font-size: 4em;
+        text-shadow: 3px 3px 7px #FFF;
+        
+    }
+    </style>
+
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="carrossel">
+        <div class="trilho" id="trilho">
+            <div class="item" style="background: #e74c3c;"><h2>01</h2></div>
+            <div class="item" style="background: #3498db;"><h2>02</h2></div>
+            <div class="item" style="background: #2ecc71;"><h2>03</h2></div>
+            <div class="item" style="background: #e8f349;"><h2>04</h2></div>
+            <div class="item" style="background: #c02986;"><h2>05</h2></div>
+            <div class="item" style="background: #9849f3;"><h2>06</h2></div>
+        </div>
+    </div>
+    <script>
+  const trilho = document.getElementById('trilho');
+  
+  function girar() {
+    
+    // 1. Aplica a transição suave para deslizar
+    trilho.style.transition = "transform 1.5s ease-in-out"; 
+    trilho.style.transform = "translateX(-1000px)";
+
+    // 2. Espera a animação acabar (2s) para reorganizar os itens
+    setTimeout(() => {
+      // Remove a transição (para o pulo ser instantâneo e invisível)
+      trilho.style.transition = "none";
+      
+      // Move o primeiro item para o final do container
+      trilho.appendChild(trilho.firstElementChild);
+      
+      // Reseta a posição do trilho para o ponto zero
+      trilho.style.transform = "translateX(0)";
+    }, 2000); // Esse tempo deve ser igual ao da transição
+  }
+
+  // Executa a cada 6 segundos (pausa) + 2 segundos (movimento)
+  setInterval(girar, 3000);
+</script>
+</body>
+</html>
+
+
+
+

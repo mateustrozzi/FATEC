@@ -1,0 +1,93 @@
+body {
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    min-height: 100vh; /* Garante que o corpo ocupe a tela toda */
+    margin: 0; /* zera a margem do navegador */
+}
+
+h1 {
+    font-size: 3em;
+    padding: 0.5em;
+    color: yellowgreen;
+    text-align: center;
+}
+
+.corpo {
+    background: linear-gradient(to right, #212020, #3f3f3f);
+    width: 60%;
+    height: 70dvh;
+    box-shadow: 5px 5px 13px rgba(242, 239, 239, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Referência para as fotos absolutas */
+    width: 300px;
+    height: 450px;      /* Altura fixa para o texto não subir */
+    text-align: center;
+}
+
+.foto1, .foto2 {
+    position: absolute; /* só funcionam quando o pai é relative */
+    top: 20px;         
+    left: 50%;          /* Move para o meio */
+    transform: translateX(-50%); /* Centraliza perfeitamente horizontal - (GEMINI) */
+    width: 200px;
+    height: 200px;
+}
+
+.foto2 {
+    opacity: 0;                /* invisível */
+    transition: opacity 0.6s ease-in-out; /* transição da opacidade */
+    z-index: 2;                /* Ficar por cima da foto1 */
+}
+
+.container:hover .foto2 {
+    opacity: 1;
+}
+
+.corpo img {
+    width: 100%;       /* Ocupa todo o tamanho da div .foto */
+    height: 100%;
+    object-fit: cover; /* mantém a proporção das imagens */
+    border: 3px solid #FFF;
+    border-radius: 50%;
+}
+
+/* 4. O TEXTO (EMBAIXO) */
+.texto {
+    margin-top: 240px; /* Empurra o texto para baixo da área das fotos */
+    padding: 10px;
+}
+
+p {
+    font-size: 1.5em;
+    color: cyan;
+    transition: color 0.3s;
+}
+
+.ass {
+    text-align: right;
+    font-size: 1em;
+}
+
+/* EFEITOS DE HOVER EXTRAS */
+.container:hover .corpo {
+    box-shadow: 7px 7px 27px greenyellow;
+}
+
+p:hover {
+    color: greenyellow;
+    cursor: pointer;
+}
