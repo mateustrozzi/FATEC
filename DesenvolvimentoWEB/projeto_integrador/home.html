@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-grid">
+
+    <!-- Header temporário (12vh) -->
+    <header class="temp-header">
+        <span>PARA POSICIONAMENTO</span>
+    </header>
+
+    <main class="carrossel" id="home">
+        <div class="track">
+            <!-- Slide 01 -->
+             
+            <article class="slide active">
+                <picture class="slide-image">
+                    <!-- Mobile Portrait -->
+                    <source media="(max-width: 480px)" srcset="mobile/01_mobile.webp">
+                    <!-- Tablet / Mobile Landscape -->
+                    <source media="(max-width: 1024px)" srcset="tablet/01.webp">
+                    <!-- Desktop -->
+                    <img src="01.webp" alt="Destaque 01">
+                </picture>
+                
+                <div class="overlay"></div>
+
+                <div class="carrossel-content">
+                    <h2>Título do Slide 01</h2>
+                    <span>Frase de informação ou destaque importante</span>
+                </div>
+            </article>
+
+            <!-- Repetir estrutura para Slides 02 a 05 -->
+            <!-- Slide 02 (Exemplo simplificado, repita a lógica do picture) -->
+            <article class="slide">
+                <picture class="slide-image">
+                    <source media="(max-width: 480px)" srcset="mobile/02_mobile.webp">
+                    <source media="(max-width: 1024px)" srcset="tablet/02.webp">
+                    <img src="02.webp" alt="Destaque 02">
+                </picture>
+                <div class="overlay"></div>
+                <div class="carrossel-content">
+                    <h2>Título do Slide 02</h2>
+                    <span>Outra frase de impacto aqui</span>
+                </div>
+            </article>
+            <!-- Adicionar 03, 04, 05... -->
+        </div>
+
+        <!-- Controles de Navegação -->
+        <button class="nav-btn prev" aria-label="Anterior">&#10094;</button>
+        <button class="nav-btn next" aria-label="Próximo">&#10095;</button>
+
+        <!-- Indicadores (Bullets) -->
+        <div class="indicators">
+            <span class="bullet active"></span>
+            <span class="bullet"></span>
+            <span class="bullet"></span>
+            <span class="bullet"></span>
+            <span class="bullet"></span>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
