@@ -96,3 +96,77 @@ footer.exerc3 p > a{
     color: rgb(55, 3, 245);
     font-weight: bold;
 }
+.titulo{
+    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.8);
+    height: 10vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #990606;
+}
+.titulo > h1{
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+}
+article{
+    padding: 2em;
+}
+article > div > p > strong{
+    color: cyan;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+}
+article > div > h2{
+    color: #ffffff;
+    text-align: left;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+    font-size: 2em;
+}
+article > div > p > span > strong{
+    color: #FFF;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+    font-size: 1em;
+}
+article > div > p > span{
+    color: #f8f406;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+    font-size: 1em;
+}
+article > div > img{
+    width: 350px;
+    margin-top: 2em;
+}
+.imagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1em;
+}
+.imagem > img{
+    box-shadow: 4px 4px 16px rgba(70, 253, 214, 0.4);
+}
+.rodape{
+    background-color: #990606;
+    height: auto;
+    padding: 5px;
+}
+.rodape > h5{
+    font-size: 1.2em;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+}
+.rodape > h6{
+    font-size: 1em;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+}
+.rodape > h6 > strong{
+    color: #fffb00;
+}
+.rodape > h6 > span{
+    color: #19ffcd;
+}
+img:hover{
+    translate: 3px;
+    transition: translate 0.2s ease-in-out;
+    box-shadow: 5px 5px 16px rgba(70, 253, 214, 0.6);
+    cursor: pointer;
+    
+}
