@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 1.5em;
+}
+.texto{
+    font-size: 1.5em;
+}
+h2.texto{
+    font-size: 1.2em;
+}
+footer{
+    width: auto;
+}
+@media (max-width:900px) and (orientation:landscape){
+    .texto{
+        font-size: 2.3em;
+    }
+    h2.texto{
+        font-size: 1.8em;
+    }
+    .final{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+        /*justify-content: space-between;*/
+        justify-content: center;
+        align-items: center;
+    }
+    div.final{
+        flex: 1;
+        width: auto;
+        text-align: center;
+        padding: 5px;
+    }
+}

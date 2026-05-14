@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #262626;
+    height: 100vh;
+}
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img{
+    width: 350px;
+}
+article{
+    color: #FFF;
+    padding: 0.7em;
+}
+article > h2{
+    text-align: center;
+}
+p{
+    line-height: 1.5em;
+}
+a{
+    color: cyan;
+    text-decoration: none;
+}
+#maior{
+    width: 36px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+}
+span{
+    color: yellow;
+    font-size: 1.2em;
+}
+.banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.warning{
+    margin-top: 0.5em;
+    background-color: #990808;
+    padding: 0.5em;
+    width: auto;
+    font-size: 0.8em;
+    text-align: center;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+}
+.warning > span{
+    color: #FFF;
+}
+.warning > span > strong{
+    color: yellow;
+}
+.responsa{
+    text-align: center;
+    color: #FFF;
+    font-size: 2em;
+    margin: 0;
+}
+.problem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+}
+footer{
+    width: auto;
+    background-color: #1c1c1c;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.citacao{
+    background-color: grey;
+    padding: 0.5em;
+    font-style: italic;
+    color: #262626;
+    font-weight: 600;
+    box-shadow: 3px 3px 6px rgba(0, 255, 255, 0.8);
+}
+.citacao > a{
+    color: #990808;
+}
+.citacao > span{
+    color: cyan;
+    font-size: 0.8em;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
+}
+.banner > img:hover{
+    translate: 3px;
+    transition: translate 0.3s ease;
+    box-shadow: 0px 1px 10px #FFFFFF;
+    border-radius: 50%;
+
+}

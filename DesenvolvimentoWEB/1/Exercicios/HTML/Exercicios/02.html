@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Mateus L. Strozzi">
     <meta name="description" content="Exercício de Desenvolvimento Web I">
-    <link rel="icon" type="image/x-icon" href="/FATEC/DesenvolvimentoWEB/1/Exercicios/imgs/fatec_verde.png">
-    <link rel="stylesheet" href="/FATEC/DesenvolvimentoWEB/1/Exercicios/CSS/basicos.css">
+    <link rel="icon" type="image/x-icon" href="/Downloads/escola/FATEC/DesenvolvimentoWEB/1/Exercicios/imgs/fatec_verde.png">
+    <link rel="stylesheet" href="/Downloads/escola/FATEC/DesenvolvimentoWEB/1/Exercicios/CSS/basicos.css">
+    <link rel="stylesheet" href="/Downloads/escola/FATEC/DesenvolvimentoWEB/1/Exercicios/CSS/02.css">
     <!--
     Enunciado: 2. Crie um documento html5 para apresentar:
     a) Na aba do navegador o título “Lista – Exercício”
@@ -57,10 +58,35 @@
     traz críticas enviesadas pela dicotomia imposta por ideologias tacanhas, mas uma crítica velada à falta de união entre os dito animais 
     racionais, 
     a sempre postegar o lado humano dos países distantes dos melhores IDHs, e onde a nata da tecnologia não chega antes da obsolecência.</p>
-    <footer><div class="rodape">Texto de Mateus L. Strozzi - 2026 - Todos os direitos reservados</div></footer>
+    <footer>
+        <div class="final">
+            <div>
+                Texto de Mateus L. Strozzi
+            </div>
+            <div style="padding-left: 0.5em;padding-right: 0.5em;">
+                - 2026 - 
+            </div>
+            <div>
+                Todos os direitos reservados
+            </div>
+             
+        </div> 
+        
+    </footer>
+    <div id="resultado-tela"></div>
      
     
+<script>
+    // 1. Captura os valores da resolução da janela
+const largura = window.innerWidth;
+const altura = window.innerHeight;
 
+// 2. Seleciona a div pelo ID
+const minhaDiv = document.getElementById('resultado-tela');
+
+// 3. Coloca o texto com os valores dentro da div
+minhaDiv.innerText = `Resolução atual: ${largura}x${altura}px`;
+</script>
     
 </body>
 </html>
