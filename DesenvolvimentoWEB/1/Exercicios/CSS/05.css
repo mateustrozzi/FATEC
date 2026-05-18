@@ -4,11 +4,6 @@ body{
     background-color: #262626;
     height: 100vh;
 }
-.titulo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 img{
     width: 350px;
 }
@@ -25,12 +20,10 @@ p{
 a{
     color: cyan;
     text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
-#maior{
-    width: 36px;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    margin-bottom: 0.5em;
+a:hover{
+    color: yellow;
 }
 span{
     color: yellow;
@@ -40,7 +33,10 @@ span{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: center;   
+}
+.banner > img{
+     transition: transform 0.5s ease;
 }
 .warning{
     margin-top: 0.5em;
@@ -95,9 +91,32 @@ footer{
     text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
 }
 .banner > img:hover{
-    translate: 3px;
-    transition: translate 0.3s ease;
-    box-shadow: 0px 1px 10px #FFFFFF;
+    transform: translateX(3px);    
+    box-shadow: 0px 1px 10px #ffffff7a;
     border-radius: 50%;
+}
 
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+.titulo:hover{
+     transform: translateX(5px);
+        
+}
+#maior{
+    width: 36px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+}
+.ludopatia{
+   transition: color 1s ease;
+   transition: font-size 1s ease;
+}
+.ludopatia:hover{
+    color: red;
+    font-size: 2em;
 }

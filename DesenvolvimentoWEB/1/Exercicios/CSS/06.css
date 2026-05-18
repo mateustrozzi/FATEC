@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*reseta a forma de cálculo do navegador */
+}
+html, body{
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+body{
+    
+    background-color: #dddddd;
+    display: flex;
+    flex-direction: column;
+    
+}
+img{
+    width: 10em;
+}
+figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.topo{
+    padding: 20px 0;
+    margin-bottom: 2em;
+}
+h1{
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0;    
+}
+.brasil, .china, .italia, .irlanda{
+    padding: 20px 0;
+} 
+h2{
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0;    
+}
+h1, h2, figcaption{
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #262626;
+}
+figcaption{
+    font-weight: 700;
+    color: rgb(34, 33, 33);
+}
+.cima, .baixo{
+    display: flex;
+    justify-content: center;
+}
+footer {
+  background-color: #1b1b1b;
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.rodape a {
+    color: inherit; /*força a usar a cor do elemento pai*/
+    text-decoration: none;
+}
+main{
+    flex: 1;
+}
+@media (min-width: 768px) {
+    .rodape h6{
+        font-size: 1em;
+    }
+    .rodape h5{
+        font-size: 1.5em;
+        color: #64f8f8;
+    }
+    .rodape a{
+        transition: color 1s ease-in-out;
+    }
+    .rodape a:hover{
+        color: cyan;
+    }
+    .italia, .irlanda, .china, .brasil{
+        transition: transform 0.5s ease-in-out;        
+    }
+    .italia h2, .irlanda h2, .china h2, .brasil h2{
+        transition: color 0.1s ease-in-out;        
+    }
+    .brasil:hover,
+    .china:hover{
+        transform: translateX(-5px);        
+    }
+    .italia:hover,
+    .irlanda:hover{
+        transform: translateX(5px);        
+    }
+     .italia h2:hover, .irlanda h2:hover, .china h2:hover, .brasil h2:hover{
+        color: cyan;
+}
