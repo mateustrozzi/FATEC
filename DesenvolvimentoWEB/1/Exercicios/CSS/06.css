@@ -97,4 +97,5 @@ main{
     }
      .italia h2:hover, .irlanda h2:hover, .china h2:hover, .brasil h2:hover{
         color: cyan;
+     }
 }
