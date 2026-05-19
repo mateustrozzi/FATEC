@@ -81,21 +81,49 @@ main{
     .rodape a:hover{
         color: cyan;
     }
-    .italia, .irlanda, .china, .brasil{
+    .italia img, .irlanda img, .china img, .brasil img{
         transition: transform 0.5s ease-in-out;        
     }
     .italia h2, .irlanda h2, .china h2, .brasil h2{
-        transition: color 0.1s ease-in-out;        
+        transition: color 0.8s ease-in-out;        
     }
-    .brasil:hover,
-    .china:hover{
-        transform: translateX(-5px);        
+    .brasil img:hover,
+    .china img:hover{
+        transform: translate(-5px, -5px);        
     }
-    .italia:hover,
-    .irlanda:hover{
-        transform: translateX(5px);        
+    .italia img:hover,
+    .irlanda img:hover{
+        transform: translate(5px, 5px);        
     }
-     .italia h2:hover, .irlanda h2:hover, .china h2:hover, .brasil h2:hover{
-        color: cyan;
+     .italia h2:hover{
+        color: #b10202;       
+     }
+     .brasil h2:hover{
+        color: green;
+     }     
+     .china h2:hover{
+        color: #f02400;
+     }     
+     .irlanda h2:hover{
+        color: #ff7316;
+     }
+     .italia figcaption, .brasil figcaption, .irlanda figcaption, .china figcaption{
+        transition: color 0.8s ease-out;
+     }
+     .italia figcaption:hover{
+        color: #0b9612;        
+        text-shadow: 1px 2px 6px #000000ab;
+     }
+     .brasil figcaption:hover, .china figcaption:hover{
+        color: #eeff00;   
+        text-shadow: 1px 2px 6px #00b300;     
+     }
+     .china figcaption:hover{
+        color: #eeff00;   
+        text-shadow: 1px 2px 6px #fc1616;     
+     }
+     .irlanda figcaption:hover{
+        color: #2e7e0fec;   
+        text-shadow: 1px 2px 6px #f1a519;     
      }
 }
