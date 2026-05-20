@@ -51,7 +51,8 @@ inline void limparTela() {
     #ifdef _WIN32
         std::system("cls");
     #else
-        std::system("clear");
+        //std::system("clear");
+        std::cout << "\033[2J\033[1H" << std::flush; //código escape para limpar a tela (Linux e MAC)
     #endif
 }
 
