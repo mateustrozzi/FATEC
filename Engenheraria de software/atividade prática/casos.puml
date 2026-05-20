@@ -1,0 +1,70 @@
+@startuml
+    skinparam actorStyle awesome
+    left to right direction
+    
+    actor "Aluno" as AL
+    actor "Psicólogo" as PS
+    actor "Professor Coordenador" as PC
+    actor "Administrador" as ADM
+    
+   package "Sistema MindFlow - Ecossistema Emocional" {
+        usecase "Cadastrar Usuário" as UC1
+        usecase "Efetuar Login" as UC2
+        usecase "Registrar Humor Diário" as UC3
+        usecase "Agendar Atividades" as UC4
+        usecase "Solicitar Ajuda de Contexto (FAQ/App)" as UC5
+        usecase "Solicitar Ajuda em Surtos (SOS)" as UC6
+        
+        usecase "Realizar Questionários Clínicos" as UC_TESTE
+        usecase "Responder DASS-21" as UC_DASS
+        usecase "Responder SQR-20" as UC_SQR
+        
+        usecase "Receber Recomendações Automáticas" as UC7
+        usecase "Visualizar Histórico Emocional" as UC8
+        usecase "Gerar Relatórios de Acompanhamento" as UC9
+        usecase "Gerenciar Usuários e Sistema" as UC10
+   }
+   
+   actor "IA (Motor de Análise)" as IA <<System>>
+   
+   'Relacionamentos do Aluno
+   AL --> UC1
+   AL --> UC2
+   AL --> UC3
+   AL --> UC4
+   AL --> UC5
+   AL --> UC6
+   AL --> UC_TESTE
+   AL --> UC7
+   AL --> UC8
+   
+   'Especialização dos Testes
+   UC_TESTE <|-- UC_DASS
+   UC_TESTE <|-- UC_SQR
+   
+   'Relacionamentos da IA
+   IA -- UC7 : "Gera sugestões baseadas em"
+   IA -- UC3 : "Analisa dados de"
+   IA -- UC_TESTE : "Processa score de"
+   
+   'Relacionamentos do Psicólogo
+   PS --> UC2
+   PS --> UC8 : "Monitorar Alunos"
+   PS --> UC9
+   PS --> UC6 : "Receber Alerta"
+   
+   'Relacionamentos do Professor Coordenador
+   PC --> UC2
+   PC --> UC8 : "Visão Pedagógica"
+   PC --> UC9
+   
+   'Relacionamentos do Administrador
+   ADM --> UC2
+   ADM --> UC10
+   
+   'Relações de Inclusão/Extensão (Opcional para detalhes)
+   UC3 ..> UC7 : <<extend>>
+   UC_TESTE ..> UC7 : <<extend>>
+   UC6 ..> UC9 : <<include>>
+   
+   @enduml
