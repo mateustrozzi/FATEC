@@ -5,7 +5,9 @@
 }
 html, body{
     min-height: 100vh;
+    min-width: 100vw;
     min-height: 100dvh;
+    min-width: 100dvw;
 }
 body{
     display: flex;
