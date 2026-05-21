@@ -1,12 +1,11 @@
-*{
+*, ::before, ::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 html, body{
-    height: 100dvh;
-    height: 100svh;
     height: 100vh;
+    height: 100dvh;
 }
 body{
     display: flex;
@@ -52,6 +51,7 @@ header{
     margin: 0;
     padding: 0;
 }
+
 .botao{
     display: inline-block;
     padding: 10px 20px;
@@ -60,23 +60,20 @@ header{
     text-decoration: none;
     border-radius: 8px;
     box-shadow: 0px 4px 8px #00000049;    
+    transition: background-color 1s ease-in, color 0.4s ease-out;
 }
-.botao {
-    transition: background-color 1s ease-in;
-    transition: color 0.4s ease-out;
-}
+
 .botao:hover{
     background-color: orangered;
     color: #222;
 }
+
 .dropdown{
     position: relative;
     display: inline-block;
-
 }
+
 .submenu{
-    /* display: none; */
-    overflow: hidden; /* para o texto não vazr */
     position: absolute;
     top: 100%;
     left: 0;
@@ -84,10 +81,14 @@ header{
     min-width: 180px;    
     z-index: 10;
     border-radius: 8px;
-    max-height: 0;
+
     opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+    visibility: hidden;
+    transform: translateY(10px); /* Opcional: faz o menu brotar de leve para baixo */
+    
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
+
 .submenu a{
     color: #FFF;
     padding: 12px 16px;
@@ -96,17 +97,15 @@ header{
     border-radius: 8px;
     transition: background-color 0.4s ease-in-out;
 }
-.menu:hover .submenu:hover{
-    opacity: 1;
-    visibility: visible;
-    
 
-}
 .submenu a:hover{
     background-color: orangered;
 }
+
 .dropdown:hover .submenu{
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Volta para a posição original dele */
 }
 footer{
     background-color: orangered;
