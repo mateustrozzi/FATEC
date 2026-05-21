@@ -1,3 +1,8 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     margin: 0;
     padding: 0;
@@ -113,10 +118,8 @@ footer{
     margin-bottom: 0.5em;
 }
 .ludopatia{
-   transition: color 1s ease;
-   transition: font-size 1s ease;
+   transition: color 1s ease;   
 }
 .ludopatia:hover{
     color: red;
-    font-size: 2em;
 }

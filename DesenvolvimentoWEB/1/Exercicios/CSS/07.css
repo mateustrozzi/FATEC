@@ -1,4 +1,4 @@
-*{
+*, ::before, ::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,27 +15,46 @@ body{
 main{
     flex: 1;
 }
-h1{
-    color: #2b39ff;
+span{
+    color: #0a15ab;
     font-size: 1.5em;
     text-align: center;
     padding: 0.5em ;
     text-shadow: 1px 2px 4px #00000050;
 }
-img{
-    width: 2em;
+.player-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #adadff;
+    height: 4em;
     position: fixed;
-    left: 23em;
-    top: 2em;
+    box-shadow: 1px 3px 6px #00000070;
+}
+.player img{
+    width: 2em;
+    border-radius: 50%;
 }
 img:hover{
     cursor: pointer;
 }
+.lyrics{
+    margin-top: 4.5em;
+}
 article{
-    padding: 1em;  
+    padding: 1.5em;  
 }
 p{
     line-height: 1.3em;
+}
+blockquote{
+    font-size: 1.4em;
+    font-style: italic;
+    color:#181e72;
+    border-left: 3px solid blue;
+    padding: 0.5em;
 }
 footer{
     background-color: #278cff;
