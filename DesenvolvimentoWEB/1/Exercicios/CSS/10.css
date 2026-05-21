@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 html, body{
-    min-height: 100dvh;
-    min-height: 100vh;
+    height: 100dvh;
+    height: 100svh;
+    height: 100vh;
 }
 body{
     display: flex;
@@ -74,7 +75,8 @@ header{
 
 }
 .submenu{
-    display: none;
+    /* display: none; */
+    overflow: hidden; /* para o texto não vazr */
     position: absolute;
     top: 100%;
     left: 0;
@@ -82,6 +84,9 @@ header{
     min-width: 180px;    
     z-index: 10;
     border-radius: 8px;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 .submenu a{
     color: #FFF;
@@ -90,6 +95,12 @@ header{
     display: block;
     border-radius: 8px;
     transition: background-color 0.4s ease-in-out;
+}
+.menu:hover .submenu:hover{
+    opacity: 1;
+    visibility: visible;
+    
+
 }
 .submenu a:hover{
     background-color: orangered;
