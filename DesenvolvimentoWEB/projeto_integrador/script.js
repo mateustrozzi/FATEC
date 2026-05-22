@@ -99,38 +99,34 @@ function movePrev() {
     updateActiveSlide();
 }
 
-// O pulo do gato: quando a transição termina, verificamos se estamos em um clone
+// O pulo do gato corrigido: sincroniza a troca de slide com a troca de classe active
 track.addEventListener('transitionend', () => {
     if (slides[counter].classList.contains('clone')) {
         track.style.transition = "none"; // Remove animação para teletransporte
+        
         if (slides[counter].innerHTML.includes("Slide 01")) {
             counter = 1; // Volta para o slide 1 real
         } else {
-            counter = slides.length - 2; // Vai para o slide 5 real
+            counter = slides.length - 2; // Vai para o último slide real (Slide 5)
         }
+        
         track.style.transform = `translateX(${-size * counter}%)`;
+
+        // Sincronização instantânea das classes active após o pulo
+        slides.forEach((s, i) => s.classList.toggle('active', i === counter));
     }
 });
 
 function updateActiveSlide() {
-    // Lógica para bullets (0 a 4)
+    // Lógica para bullets (0 a 4) - Mantida original
     let bulletIndex = counter - 1;
     if (counter === 0) bulletIndex = 4;
     if (counter === slides.length - 1) bulletIndex = 0;
 
     bullets.forEach((b, i) => b.classList.toggle('active', i === bulletIndex));
     
-    // CORREÇÃO AQUI: 
-    // Descobrimos qual é o slide real equivalente para ativar a animação do texto
-    let visualActiveIndex = counter;
-    if (counter === 0) {
-        visualActiveIndex = slides.length - 2; // Se está no clone do começo, ativa o último slide real
-    } else if (counter === slides.length - 1) {
-        visualActiveIndex = 1; // Se está no clone do fim, ativa o Slide 1 real
-    }
-
-    // Aplica a classe active no slide visual correto, evitando que o clone pisque o texto
-    slides.forEach((s, i) => s.classList.toggle('active', i === visualActiveIndex));
+    // Voltamos a ativar o slide atual (mesmo que seja clone) para a transição inicial ser suave
+    slides.forEach((s, i) => s.classList.toggle('active', i === counter));
 }
 
 nextBtn.addEventListener('click', moveNext);
