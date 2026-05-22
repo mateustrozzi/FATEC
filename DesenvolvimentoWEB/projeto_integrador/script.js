@@ -120,8 +120,17 @@ function updateActiveSlide() {
 
     bullets.forEach((b, i) => b.classList.toggle('active', i === bulletIndex));
     
-    // Ativa animação de texto apenas no slide atual
-    slides.forEach((s, i) => s.classList.toggle('active', i === counter));
+    // CORREÇÃO AQUI: 
+    // Descobrimos qual é o slide real equivalente para ativar a animação do texto
+    let visualActiveIndex = counter;
+    if (counter === 0) {
+        visualActiveIndex = slides.length - 2; // Se está no clone do começo, ativa o último slide real
+    } else if (counter === slides.length - 1) {
+        visualActiveIndex = 1; // Se está no clone do fim, ativa o Slide 1 real
+    }
+
+    // Aplica a classe active no slide visual correto, evitando que o clone pisque o texto
+    slides.forEach((s, i) => s.classList.toggle('active', i === visualActiveIndex));
 }
 
 nextBtn.addEventListener('click', moveNext);
