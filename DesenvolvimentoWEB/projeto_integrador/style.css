@@ -92,6 +92,16 @@
 .slide.active .carrossel-content h2 { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
 .slide.active .carrossel-content span { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
 
+/* Quando o carrossel remove a transição da faixa para teleportar, 
+   nós também removemos temporariamente o delay e a transição do texto 
+   para que a troca entre clone e original seja instantânea e invisível */
+.track[style*="transition: none"] .slide .carrossel-content h2,
+.track[style*="transition: none"] .slide .carrossel-content span,
+.track[style*="transition: none"] .overlay {
+    transition: none !important;
+    transition-delay: 0s !important;
+}
+
 /* Botões */
 .nav-btn {
     position: absolute;
