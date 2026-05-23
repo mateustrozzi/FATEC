@@ -13,7 +13,7 @@ int main() {
     limparTela();
 
     std::stringstream borda;
-    borda << std::string(50, '=');
+    borda << std::string(80, '=');
 
     int n1, n2, n3, maior, menor, quase;
 
@@ -106,7 +106,7 @@ int main() {
     // descobrindo o intermediário
     quase = (n1 + n2 + n3) - maior - menor;
 
-    // Definindo o título dinamicamente baseado em quem é o maior
+    // Definindo o título
     if (maior == n1){
         titulo << "O PRIMEIRO NÚMERO É MAIOR";
     }      
@@ -118,8 +118,11 @@ int main() {
     }
 
     mensagem << "O número " << maior << " é maior que " << quase << " que é maior que " << menor << ".";
-    center(titulo.str());    
-    center(mensagem.str());            
+    center(borda.str());
+    center(titulo.str()); 
+    center(borda.str());   
+    center(mensagem.str());
+    center(borda.str());            
 
     std::cout << "\n\n\n" << std::endl;   
     return 0;

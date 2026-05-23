@@ -10,17 +10,18 @@ int main() {
         std::setlocale(LC_ALL, ".UTF-8");
     #endif
 
-    //limparTela();
+    limparTela();
 
     std::stringstream borda;
-    std::stringstream titulo;
     std::stringstream mensagem;
-    borda << std::string(50, '=');
-    float A, B, C = 0;
+    borda << std::string(80, '=');
+    float A, B, C, aux = 0;
+    bool triangulo;
+    std::string tipo;
 
     center(borda.str());
     center("VERIFIQUE SEU TRIÂNGULO");    
-    center(borda.str());
+    center(borda.str());    
 
     std::cout << "Entre com o valor do primeiro lado do seu triângulo:\n";
     std::cin >> A;     
@@ -29,31 +30,58 @@ int main() {
     std::cin >> B;
 
     std::cout << "Entre com o valor do último lado do seu triângulo:\n";
-    std::cin >> C;    
+    std::cin >> C;   
+    
+    // testa se é triângulo
 
-    if(A + B > C && A + C > B && B + C > A){
-        mensagem << "Os valores informados formam um triângulo válido!\n";
-        titulo << "TRIÂNGULO";
-        float sum1 = A + B;
-        float sum2 = B + C;
-        std::cout << (sum1) << std::endl;
-        std::cout << (sum2) << std::endl;;
-    }else{
-        titulo << "ARE YOU KIDDIN'ME?";
-        if(A + B < C){
-        mensagem << "A soma de " << A << " e " << B << " é menor que " << C;
-    }else{
-        mensagem << "A soma de " << B << " e " << C << " é menor que " << A;
+    if(A > B && A > C){
+        if(B + C > A){
+            triangulo = true;
+        }
+        else{
+            triangulo = false;
+        }
     }
-}
+    else if(B > A && B > C){
+        if(A + C > B){
+            triangulo = true;
+        }
+        else{
+            triangulo = false;
+        }
+    }
+    else if(C > A && C > B){
+        if(A + B > C){
+            triangulo = true;
+        }
+        else{
+            triangulo = false;
+        }
+    }
 
-    //limparTela();
+    //testa se é equilátero, isósceles ou escaleno
 
-    
-        center(titulo.str());    
-        center(mensagem.str());
-        return 0;
-    
+    if(A == B && B == C && C > 0){
+        tipo = "EQUILÁTERO";
+    }
+    else if(triangulo == true){
+        if((A == B && A != C) || (B == C && A != B)){
+            tipo = "ISÓSCELES";
+        }
+        else if(A != B && B != C && triangulo == true){
+            tipo = "ESCALENO";
+        }
+    }
+
+    limparTela();
+
+    mensagem << "Os números " << A << ", " << B << " e " << C << " formam um triángulo válido.";
+
+    center(borda.str());
+    center(tipo);    
+    center(borda.str());
+    center(mensagem.str());
+    center(borda.str());
     
     return 0;
 }
