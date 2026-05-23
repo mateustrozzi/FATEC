@@ -28,6 +28,9 @@ td, th{
     padding: 15px;
     border: 4px inset #ddd;
 }
+.tipos{
+    text-align: center;
+}
 footer{
     background-color: orangered;
     padding: 0.5em;    
@@ -36,6 +39,8 @@ footer{
     align-items: center;
     line-height: 1.5em;
     min-width: 100dvw;
+    position: fixed;
+    bottom: 0;
 }
 footer a, p, h6, h5, div{
     color: #ffffff;
