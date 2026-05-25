@@ -11,15 +11,17 @@
 
 /* Título */
 .slide-texto h1 {
-    /* font-weight: 700; */
+    font-family: var(--fontPrim);
+    font-weight: 700;
     line-height: 1.1;
     margin-bottom: 8px;
     opacity: 0;
 }
+/* texto descritivo imagens */
 .slide-texto p {
     font-weight: 400;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.85); /* Hierarquia visual levemente mais suave */
+    color: rgba(255, 255, 255, 0.85); /* força o destaque no título */
     opacity: 0;
 }
 
@@ -45,7 +47,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
     .slide-texto {
         top: calc(var(--texto-y) - 8%);
         left: calc(var(--texto-x) + 4%);
@@ -73,7 +75,7 @@
 
 @keyframes desce-titulo {
     from {
-        transform: translateY(-20px);
+        transform: translateY(-120px);
         opacity: 0;
     }
     to {
@@ -84,7 +86,7 @@
 
 @keyframes descricao {
     from {
-        transform: translateX(-30px);
+        transform: translateX(-130px);
         opacity: 0;
     }
     to {

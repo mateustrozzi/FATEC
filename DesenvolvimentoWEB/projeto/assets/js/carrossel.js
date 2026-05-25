@@ -40,7 +40,7 @@ function criarIndicadores() {
 // atualiza as bolinhas, caso o usuario clique nos botões
 function irParaSlide(index) {
   if ((slideAtual === totalSlides - 1 && index === 0) || (slideAtual === 0 && index === totalSlides - 1)) {
-    trilhaSlides.style.transition = 'transform 4s cubic-bezier(0.645, 0.045, 0.355, 1)';
+    trilhaSlides.style.transition = 'transform 1.6s cubic-bezier(0.645, 0.045, 0.355, 1)';
   } else {
     // Limpa a propriedade em linha para que o navegador use o padrão do CSS (0.8s)
     trilhaSlides.style.transition = '';
@@ -55,7 +55,7 @@ function irParaSlide(index) {
   slides.forEach(s => s.classList.remove('ativo'));
   slides[slideAtual].classList.add('ativo');
   
-  //INCROBIZAÇÃO DOS BULLETS
+  //SINCRONIZAÇÃO DOS BULLETS
   indicadores.forEach((ind, i) => {
     // toggle(className, condition) adiciona se true, remove se false
     ind.classList.toggle('ativo', i === slideAtual);
@@ -90,7 +90,7 @@ function iniciarAutoplay() {
       proximoSlide = 0;
     }
     irParaSlide(proximoSlide);
-  }, 10000); // Muda a cada 5 segundos (5000ms)
+  }, 8000); // Muda a cada 5 segundos (5000ms)
 }
 
 function reiniciarAutoplay() {

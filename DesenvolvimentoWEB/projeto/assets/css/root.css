@@ -21,5 +21,7 @@ html, body {
     --tam-header: 15vh; /* tamanho do header de acordo com a Júlia */
     --texto-y: 55%; /* altura do texto em relação à tela (top)*/
     --texto-x: 5%; /* margem esquerda do texto */
-    --easing: cubic-bezier(0.645, 0.045, 0.355, 1); /* efeito elástico/suave no texto e slide */    
+    --easing: cubic-bezier(0.645, 0.045, 0.355, 1); /* efeito elástico/suave no texto e slide */
+    --fontPrim: 'Montessat', sans-serif; /* fonte primária */    
+    --fontSec: 'Inter', sans-serif; /* fonte secundária */
 }
