@@ -90,7 +90,7 @@ function iniciarAutoplay() {
       proximoSlide = 0;
     }
     irParaSlide(proximoSlide);
-  }, 5000); // Muda a cada 5 segundos (5000ms)
+  }, 10000); // Muda a cada 5 segundos (5000ms)
 }
 
 function reiniciarAutoplay() {
