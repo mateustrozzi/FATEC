@@ -11,14 +11,12 @@
 
 /* Título */
 .slide-texto h1 {
-    font-family: 'Montserrat', 'Inter', sans-serif;
-    font-weight: 700;
+    /* font-weight: 700; */
     line-height: 1.1;
     margin-bottom: 8px;
     opacity: 0;
 }
 .slide-texto p {
-    font-family: 'Inter', sans-serif;
     font-weight: 400;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.85); /* Hierarquia visual levemente mais suave */
@@ -103,4 +101,13 @@
 .slide.ativo .slide-texto p {
     animation: descricao var(--anim-texto) var(--easing) forwards;
     animation-delay: var(--delay-texto);
+}
+
+@media (min-width: 992px) and (min-height: 500px) {
+  .slide-texto h1{
+        font-size: clamp(2.5em, 3.5vh, 2.5em);
+  }
+  .slide-texto p{
+    font-size: clamp(1.5em, 2.5vh, 1.5em);
+  }
 }

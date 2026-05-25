@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s, transform 0.2s;
+  display: none;
 }
 
 .btn-navegacao:hover {
@@ -31,4 +32,12 @@
 
 #btn-proximo {
   right: 20px;
+}
+@media (min-width: 992px) and (min-height: 500px) {
+  #btn-proximo{
+    display: block;
+  }
+  #btn-anterior{
+    display: block;
+  }
 }
