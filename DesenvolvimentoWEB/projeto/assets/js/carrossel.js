@@ -108,6 +108,16 @@ container.addEventListener('mouseleave', () => {
   iniciarAutoplay();
 });
 
+window.registrarCarrosselHero?.({
+  irParaSlide,
+  get slideAtual() {
+    return slideAtual;
+  },
+  get totalSlides() {
+    return totalSlides;
+  },
+});
+
 //  INICIALIZAÇÃO
 criarIndicadores();
 irParaSlide(0);

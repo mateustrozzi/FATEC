@@ -6,7 +6,7 @@
 
 #secao-hero{
     width: 100%;
-    height: 100vh;
+    height: 100svh;
     display: flex;
     flex-direction: column; 
     position: relative;
@@ -15,7 +15,7 @@
 #carrossel-container{
     position: relative; /* os filhos desse item devem ter postion:absolute */
     display: block;
-    height: calc(100vh - var(--tam-header)); /* ao alterar o valor aqui, verifique se trata-se da mesma medida */
+    height: calc(100svh - var(--tam-header)); /* ao alterar o valor aqui, verifique se trata-se da mesma medida */
     width: 100%;
     margin: 0;
     padding: 0;
@@ -146,7 +146,7 @@
         object-position: 50% 50%;
     }
     #reserva-header{
-        height: 8vh;
+        height: 8svh;
     }
 }
 /* @media (min-width: 992px) and (min-height: 500px) {

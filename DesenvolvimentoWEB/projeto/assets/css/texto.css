@@ -6,7 +6,7 @@
     z-index: 2;
     -webkit-font-smoothing: antialiased;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55); 
-    transition: all 0.3s ease;
+    transition: all 0.9s ease;
 }
 
 /* Título */
@@ -75,7 +75,7 @@
 
 @keyframes desce-titulo {
     from {
-        transform: translateY(-120px);
+        transform: translateY(-220px);
         opacity: 0;
     }
     to {
@@ -86,7 +86,7 @@
 
 @keyframes descricao {
     from {
-        transform: translateX(-130px);
+        transform: translateX(330px);
         opacity: 0;
     }
     to {
