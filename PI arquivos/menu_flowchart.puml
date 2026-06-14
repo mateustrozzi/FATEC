@@ -1,0 +1,91 @@
+@startuml
+' Configurações Globais de Estilo Solicitadas
+skinparam backgroundColor #333333
+skinparam defaultFontSize 20
+skinparam defaultFontColor #f2ff3b
+skinparam defaultFontName Arial
+
+' Estilo para setas
+skinparam ArrowColor #FF0000
+skinparam ArrowThickness 2
+
+' Estilo para caixas de atividade (nós)
+skinparam activity {
+    BackgroundColor #333333
+    BorderColor #ff9f22
+    FontColor #75ff7b
+    FontSize 20
+    DiamondBackgroundColor #333333
+    DiamondBorderColor #FF0000
+    DiamondFontColor #ff7c7c
+}
+
+' Estilo para grupos (partições)
+skinparam partition {
+    BorderColor #FF0000
+    FontColor #00ffee
+    BackgroundColor #222222
+}
+
+' Estilo para Notas (Caixas de fala)
+skinparam note {
+    BackgroundColor #333333
+    BorderColor #ff9f22
+    FontColor #75ff7b
+    FontSize 18
+}
+
+title Fluxograma menu.js
+
+start
+
+partition "Inicialização (DOMContentLoaded)" {
+    :Selecionar hamb, nav e btnFechar;
+    
+    if (hamb e nav existem?) then (Sim)
+        :Add Event Click em hamb: \nExibir menu (.ativo);
+        
+        if (btnFechar existe?) then (Sim)
+            :Add Event Click em btnFechar: \nEsconder menu;
+        endif
+        
+        :Loop: Todos os links (a) do nav;
+        while (Mais links?) is (Sim)
+            :Add Event Click: \nEsconder menu;
+        endwhile (Não)
+    endif
+}
+
+partition "Lógica do Logo" {
+    :Selecionar #logo-svg;
+    if (logoAnimada existe?) then (Sim)
+        :Definir resetarLogo();
+        :Add Event MouseEnter e TouchStart: \nChamar resetarLogo();
+        :Set cursor: pointer;
+        :Add Event Click: \nwindow.location.href = '#secao-hero';
+    endif
+}
+
+partition "Navegação do Slide (SVG Reset)" {
+    :Selecionar todos .btn-navegacao;
+    while (Mais botões?) is (Sim)
+        :Definir resetarAnim();
+        :Add Event MouseEnter e Click: \nChamar resetarAnim();
+        note right
+            Acessa contentDocument do object
+            e reinicia o tempo do SVG
+        end note
+    endwhile (Não)
+}
+
+partition "Scroll Suave Customizado" {
+    :Definir scrollSuaveCustomizado(target, duracao);
+    note right
+        Usa requestAnimationFrame
+        e easing Quartic Out
+    end note
+}
+
+stop
+
+@enduml

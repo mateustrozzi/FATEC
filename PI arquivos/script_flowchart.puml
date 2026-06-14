@@ -1,0 +1,68 @@
+@startuml
+' Configurações Globais de Estilo Solicitadas
+skinparam backgroundColor #333333
+skinparam defaultFontSize 20
+skinparam defaultFontColor #f2ff3b
+skinparam defaultFontName Arial
+
+' Estilo para setas
+skinparam ArrowColor #FF0000
+skinparam ArrowThickness 2
+
+' Estilo para caixas de atividade (nós)
+skinparam activity {
+    BackgroundColor #333333
+    BorderColor #ff9f22
+    FontColor #75ff7b
+    FontSize 20
+    DiamondBackgroundColor #333333
+    DiamondBorderColor #FF0000
+    DiamondFontColor #ff7c7c
+}
+
+' Estilo para grupos (partições)
+skinparam partition {
+    BorderColor #FF0000
+    FontColor #00ffee
+    BackgroundColor #222222
+}
+
+title Fluxograma script.js
+
+start
+
+partition "Lógica de FAQ (Acordeão)" {
+    :Selecionar todos os elementos .perguntas;
+    while (Mais perguntas?) is (Sim)
+        :Add Event Click em cada pergunta;
+        if (Usuário Clicou?) then (Sim)
+            :Identificar resposta (nextElementSibling);
+            if (Resposta visível (display === 'block')?) then (Sim)
+                :Esconder resposta (display = 'none');
+                :Girar ícone de volta (0deg);
+            else (Não)
+                :Mostrar resposta (display = 'block');
+                :Girar ícone (180deg);
+            endif
+        endif
+    endwhile (Não)
+}
+
+partition "Função ajustarTexto (Responsividade)" {
+    :Selecionar parágrafos de .descricao-servicos;
+    
+    if (Largura da tela >= 1024px?) then (Sim)
+        :Definir textos detalhados\n(preventiva, embreagens, diferenciais, freios);
+    else (Não)
+        :Definir textos resumidos\n(preventiva, embreagens, diferenciais, freios);
+    endif
+}
+
+partition "Eventos de Carregamento" {
+    :Escutar window 'load': \nChamar ajustarTexto();
+    :Escutar window 'resize': \nChamar ajustarTexto();
+}
+
+stop
+
+@enduml

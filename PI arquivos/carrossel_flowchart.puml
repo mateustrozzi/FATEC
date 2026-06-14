@@ -1,0 +1,88 @@
+@startuml
+' Configurações Globais de Estilo
+skinparam backgroundColor #333333
+skinparam defaultFontSize 20
+skinparam defaultFontColor #f2ff3b
+skinparam defaultFontName Arial
+
+' Estilo para setas
+skinparam ArrowColor #FF0000
+skinparam ArrowThickness 2
+
+' Estilo para caixas de atividade (nós)
+skinparam activity {
+    BackgroundColor #333333
+    BorderColor #ff9f22
+    FontColor #75ff7b
+    FontSize 20
+    DiamondBackgroundColor #333333
+    DiamondBorderColor #FF0000
+    DiamondFontColor #ff7c7c
+}
+
+' Estilo para grupos (partições)
+skinparam partition {
+    BorderColor #FF0000
+    FontColor #00ffee
+    BackgroundColor #222222
+}
+
+title Fluxograma carrossel.js
+
+start
+
+:Selecionar Elementos DOM;
+:Chamar criarIndicadores;
+:Chamar irParaSlide 0;
+:Chamar iniciarAutoplay;
+
+partition "Função criarIndicadores" {
+    while (Mais slides?) is (Sim)
+        :Criar Span .indicador;
+        :Add Event Click: irParaSlide + reiniciarAutoplay;
+        :Adicionar ao Container;
+    endwhile (Não)
+}
+
+partition "Função irParaSlide" {
+    :Recebe index;
+    :slideAtual = index;
+    :Mover trilha Slides via transform 100%;
+    :Atualizar classe .ativo nos Slides;
+    :Sincronizar classe .ativo nos Bullets;
+}
+
+partition "Navegação Manual" {
+    split
+        :Clique btnProximo;
+        :index = slideAtual + 1;
+        if (index >= totalSlides?) then (Sim)
+            :index = 0;
+        else (Não)
+        endif
+    split again
+        :Clique btnAnterior;
+        :index = slideAtual - 1;
+        if (index < 0?) then (Sim)
+            :index = totalSlides - 1;
+        else (Não)
+        endif
+    end split
+    :irParaSlide index;
+    :Chamar reiniciarAutoplay;
+}
+
+partition "Sistema de Autoplay" {
+    :setInterval 8000ms;
+    :Avançar Slide Automaticamente;
+    
+    if (Interação?) then (MouseEnter)
+        :clearInterval;
+    else (MouseLeave)
+        :Chamar iniciarAutoplay;
+    endif
+}
+
+stop
+
+@enduml

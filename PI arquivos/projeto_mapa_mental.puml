@@ -1,0 +1,73 @@
+@startmindmap
+' Configurações Globais de Estilo Solicitadas
+<style>
+mindmapDiagram {
+    node {
+        BackgroundColor #333333
+        LineColor #ff9f22
+        FontColor #75ff7b
+        FontSize 20
+        FontName Arial
+    }
+    :depth(0) {
+        LineColor #FF0000
+        FontColor #f2ff3b
+        FontSize 24
+    }
+    :depth(1) {
+        LineColor #FF0000
+        FontColor #00ffee
+    }
+    rootNode {
+        LineColor #FF0000
+        FontColor #f2ff3b
+    }
+    arrow {
+        LineColor #FF0000
+        LineThickness 2
+    }
+}
+</style>
+
+* IRMÃOS BERRETA
+** index.html (Estrutura)
+*** Header Fixo
+**** Logo Animado (SVG)
+**** Menu de Navegação (Links)
+**** CTA: Botão Orçamento
+*** Seção Hero
+**** Container do Carrossel
+**** Slides Individuais (picture/source)
+**** Botões de Navegação (Object SVG)
+**** Indicadores (Bullets)
+** carrossel.css (Aparência)
+*** Layout Grid (Header/Fixo)
+*** Scroll Suave (Smooth)
+*** Estilos Mobile-First
+*** Degradê para contraste para leitura de textos
+*** Animações de Entrada dos textos (Controlado por media queries)
+*** Estilização do Carrossel (Flex/Trilha)
+** root.css (Variáveis Globais)
+*** Definição de Cores (Design Tokens)
+*** Tipografia e Fontes
+*** Reset do navegador (Paddings/Margins/Box-Sizing)
+*** Transições Padronizadas
+** assets/js/ (Interatividade)
+*** menu.js
+**** Controle Menu Mobile (menu hambúrguer/Ativo)
+**** Reset de Animação SVG (Logo/Setas)
+**** Link de Retorno (#secao-hero)
+**** Scroll Suave Customizado (Quartic Out)
+*** carrossel.js
+**** Lógica de Navegação (Ant/Prox)
+**** Criação de Indicadores Dinâmicos
+**** Sistema de Autoplay (8s)
+**** Sincronização de Estados (.ativo)
+*** swipe-carrossel.js
+**** Suporte a Toque/Gesto
+**** Detecção de Swipe Horizontal
+*** carrossel-hero-bridge.js
+**** Ponte de API Global
+**** Comunicação entre Módulos
+
+@endmindmap
