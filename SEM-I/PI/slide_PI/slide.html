@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Projeto Integrador - Team 01</title>
+    
+    <!-- CDNs do Reveal.js (Substituindo a pasta local 'dist/') -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/black.css">
+
+    <!-- Tema de syntax highlight via CDN (Substituindo o caminho local antigo) -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    
+    <style>
+        .reveal section img {
+            max-height: 500px;
+            border-radius: 8px;
+        }
+        .reveal h2 {
+            color: #e74c3c;
+        }
+        .topic-header {
+            color: #3498db !important;
+            text-transform: uppercase;
+        }
+        .fragment.fade-up {
+            transition: all 0.5s ease;
+        }
+        .uml{
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        }
+        .imagens{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 100px;
+        }
+        .final{
+            filter: invert(1);
+            width: 100px;
+        }
+        #Pedro{
+            top: 15svh !important;
+            position: absolute !important;
+            width: 100% !important;
+        }
+        #final h3{            
+                font-size: 48px;
+        }
+        #final h4{            
+                font-size: 36px;
+        }
+        #final h5{            
+                font-size: 18x;
+        }
+        #final h6{            
+                font-size: 24px;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            border: 2px solid rgb(255, 178, 91);
+            width: 80svw;
+            height: 80svh;
+            padding: 1.4rem;
+            box-sizing: border-box !important;
+            overflow-y: auto;          
+            scroll-behavior: smooth;   
+            scrollbar-width: none;     
+            -ms-overflow-style: none;  
+        }
+        .info::-webkit-scrollbar {
+          display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Capa -->
+            <section>
+                <h2>Projeto Integrador</h2>
+                <video data-autoplay src="imgs/img_slides/nossaLogo_2.mp4" controls></video>           
+            </section>    
+            
+            <section style="display: flex;">
+                <img id="pedro" src="imgs/img_slides/pedro.webp" alt="Fala do Pedro" style="width: 1080px; height: 1080px; max-width: 700px; max-height: 700px;">
+            </section>
+
+            <section>
+                <object id="berreta" data="imgs/img_slides/logoA.svg" type="image/svg+xml" width="800" height="800"></object>
+            </section>
+
+            <!-- —— Engenharia de Software —— -->
+            <section>
+                <section>
+                    <h1 class="topic-header">Engenharia de Software</h1>
+                    <p>Projetando e documentando</p>                    
+                </section>
+                
+                <section>
+                    <h2>A Empresa e sua História</h2>
+                    <img src="imgs/img_slides/empresa.jpeg" alt="Oficina Irmãos Berreta" srcset="">                    
+                </section>
+                    
+                <section>
+                    <h2>A trajetória:</h2>
+                    <div class="r-stack">
+                        <p class="fragment fade-out" data-fragment-index="1">Origem e Fundação: Os irmãos José e Jorge Berretta começaram a trabalhar na infância e, em 1977, fundaram a Autopeças Mecânica São Jorge em um pequeno galpão na Vila Daniel</p>
+                        <p class="fragment fade-in-then-out" data-fragment-index="1">Crescimento e Inovação: Com quase 50 anos de história, o negócio expandiu (estando desde 2007 na Avenida João Miziara), tornou-se referência regional na manutenção de caminhões e acompanhou toda a evolução tecnológica do setor — da mecânica manual à era digital.</p>
+                        <p class="fragment fade-in" data-fragment-index="2">Impacto Local: Mais do que uma empresa, a oficina gerou empregos, formou profissionais e criou laços profundos com a comunidade.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Mapa Mental</h2>
+                    <div style="background: #333; padding: 40px; border: 2px dashed #666; margin-top: 20px;">
+                        <img src="imgs/img_slides/mm.jpeg" alt="Mapa mental" srcset="">
+                    </div>
+                </section>
+            </section>
+
+            <section id="slide-requisitos">
+                <h2>Requisitos</h2>
+                <div style="display: grid; grid-template-columns: 1fr; margin-top: 20px;">
+                    <div class="fragment fade-out" data-fragment-index="0" style="grid-area: 1 / 1 / 2 / 2; background: rgba(46, 204, 113, 0.2); padding: 20px; border-radius: 10px;">
+                        <h4 style="color: #2ecc71;">Funcionais</h4>
+                        <ul style="font-size: 0.6em; text-align: left; line-height: 2em;">
+                            <li>O site deverá exibir um mapa de como chegar à oficina.</li>
+                            <li>O site deverá apresentar as perguntas frequentes.</li>
+                            <li>O site deverá exibir link para whatsapp, telefone e localização.</li>
+                            <li>O site deverá exibir os diferenciais da empresa (em relação aos concorrentes).</li>
+                            <li>O site deverá exibir uma seção “Sobre nós”.</li>
+                            <li>O site deverá formar a página “Home” com um carrossel abaixo do header</li>
+                            <li>O site deverá exibir os nossos (principais) serviços</li>                                
+                        </ul>
+                    </div> 
+
+                    <div class="fragment fade-in" data-fragment-index="0" style="grid-area: 1 / 1 / 2 / 2; background: rgba(255, 251, 0, 0.2); padding: 20px; border-radius: 10px;">
+                        <h4 style="color: #eeff00;">Não Funcionais</h4>
+                        <ul style="font-size: 0.6em; text-align: left; line-height: 2em;">
+                            <li>O site deverá ser responsivo e adaptável a diferentes dispositivos.</li>
+                            <li>O site deverá ter um tempo de carregamento inferior a 3 segundos.</li>  
+                            <li>O site deve levar em consideração oscilações de rede (3G/4G).</li>                                     
+                        </ul>                      
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Objetivo do Projeto</h2>
+                <p class="fragment fade-up">
+                    Desenvolver uma landing page para a oficina mecânica com o objetivo de atrair clientela, que permita apresentar a empresa, divulgar seus serviços, exibir informações de contato e possibilitar que os usuários solicitem orçamentos ou agendem atendimentos de maneira simples e intuitiva.
+                </p>
+            </section>
+
+            <section class="uml">
+                <h2>Diagrama UML</h2>
+                <p>Representação do fluxo de dados do sistema.</p>
+                <div style="background: #ffffff; padding: 40px; border: 2px dashed #666; margin-top: 20px; width: 500px; height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <img src="imgs/img_slides/UML.svg" alt="Diagrama UML">
+                </div>
+            </section>
+
+            <section>
+                <h2>Tecnologias Utilizadas</h2>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px;">
+                    <div style="background: #e44d26; padding: 15px; border-radius: 8px;">HTML5</div>
+                    <div style="background: #264de4; padding: 15px; border-radius: 8px;">CSS3</div>
+                    <div style="background: #f7df1e; color: black; padding: 15px; border-radius: 8px;">JavaScript</div>
+                    <div style="background: #cf649a; padding: 15px; border-radius: 8px;">SMIL</div>
+                    <div style="background: #646cff; padding: 15px; border-radius: 8px;">SVG</div>
+                    <div style="background: #444; padding: 15px; border-radius: 8px;">Reveal.js</div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>O que é SMIL?</h2>
+                <p>Synchronized Multimedia Integration Language, ou Linguagem integrada de multimídia sincronizada.</p>
+                <p>Baseada em hipertexto, usando XML, controla diversos tipos de mídia para Web.</p>
+            </section>
+
+            <!-- —— Design Digital —— -->
+            <section>
+                <section>
+                    <h1 class="topic-header">Design Digital</h1>
+                    <p>Identidade e Visual</p>
+                    <p>↓</p>
+                </section>
+
+                <section>
+                    <h2>A logo</h2>
+                    <div class="imagens">
+                        <div>                            
+                            <img class="atual" src="imgs/img_slides/logo_original.webp" alt="Logo atual">
+                            <h4>Logo atual</h4>
+                        </div>
+                        <div>                            
+                            <img class="nova" src="imgs/img_slides/quadricromia.svg" alt="Logo recriada">
+                            <h4>Logo recriada</h4>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Criação da Logo</h2>
+                    <ul>
+                        <li>Elementos simbólicos:</li>
+                        <ul>
+                            <li>Escudo representando a segurança</li>
+                            <li>A engrenagem</li>
+                            <li>O caminhão</li>
+                        </ul>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <h2>A animação</h2>
+                <ul>
+                    <li class="fragment fade-up">SVG como animação</li>
+                    <li class="fragment fade-up">Escala, rotação e opacidade</li>
+                    <li class="fragment fade-up">Gradiente em movimento</li>
+                </ul>                    
+            </section>                
+
+            <section>
+                <h2 style="font-size: 1.3em !important;">Decomposição cromática do logo</h2>
+                <div>
+                    <img src="imgs/img_slides/decomposição cromática.svg" alt="Decomposição cromática do logo">
+                </div>
+            </section>
+
+            <section>
+                <h2>Aplicações da logo</h2>
+                <div class="ident" style="display: flex; position: relative; width: 100%; min-height: 350px;">
+                    <div class="imagens fragment fade-out" data-fragment-index="0" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%;">
+                        <div>                            
+                            <img src="imgs/img_slides/monocromia negativa.svg" alt="Logo recriada" width="300" height="300">
+                            <h6>Monocromática negativa</h6>
+                        </div>
+                        <div>                            
+                            <img src="imgs/img_slides/monocromia positiva.svg" alt="Logo recriada" width="300" height="300">
+                            <h6>Monocromática positiva</h6>
+                        </div>                        
+                    </div>
+
+                    <div class="imagens fragment fade-in" data-fragment-index="0" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; gap: 5em">
+                        <div>                            
+                            <img class="variacao" src="imgs/img_slides/cinza.svg" alt="Logo recriada" width="300" height="300">
+                            <h6>Tons de cinza</h6>
+                        </div>
+                        <div>                            
+                            <img class="variacao" src="imgs/img_slides/quadricromia.svg" alt="Logo recriada" width="300" height="300">
+                            <h6>Quadricromia</h6>
+                        </div>                        
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Wireframes</h2>  
+                <p>Home</p>   
+                <div class="fragment fade-up">
+                    <img src="imgs/home-portrate.svg" alt="">
+                    <img src="imgs/home-landscape.svg" alt="">
+                </div>   
+            </section> 
+            
+            <section>
+                <p>Serviços</p>
+                <div style="background-color: #8b8b8b;">  
+                    <img src="imgs/servicos-portrait.svg" alt="">
+                    <img src="imgs/servicos-wide.jpg" alt="">
+                </div>    
+            </section>
+
+            <section style="display: grid; grid-template-columns: 1fr; justify-items: stretch; justify-content: center;">
+                <div style="text-align: center;">
+                    <h3 style="color: #6ecb70; font-size: 2.5rem;">Conceito de GRID</h3>
+                    <h6 style="color: #ffffff; font-size: 1.2rem;">DESKTOP</h6>
+                </div>
+                <object data="grids-estudos/desktop.svg" type="image/svg+xml" style="width: auto; height: 700px; display: block; object-fit: cover;"></object>
+            </section>
+            
+            <section style="display: grid; grid-template-columns: 1fr; justify-items: stretch; justify-content: center;">
+                <div style="text-align: center;">
+                    <h3 style="color: #6ecb70; font-size: 2.5rem;">Conceito de GRID</h3>
+                    <h6 style="color: #ffffff; font-size: 1.2rem;">Mobile Retrato e Paisagem</h6>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 2em;">
+                    <object data="grids-estudos/mobile.svg" type="image/svg+xml" style="width: auto; height: 600px; display: block; object-fit: cover;"></object>
+                    <object data="grids-estudos/tablet.svg" type="image/svg+xml" style="width: auto; height: 300px; display: block; object-fit: cover;"></object>
+                </div>
+            </section>
+
+            <!-- —— Desenvolvimento Web —— -->
+            <section>
+                <section>
+                    <h1 class="topic-header">Desenvolvimento Web</h1>
+                    <p>Interatividade e Responsividade</p>
+                    <p>↓</p>
+                </section>
+            </section>
+
+            <section style="height: 100%;" data-background="#1e1e1e">
+                <h3 style="margin-bottom: 10px;">Mapa mental - organizado o site:</h3>
+                <div style="height: 600px; overflow: hidden; position: relative;">
+                    <div class="container-rolante">
+                        <object data="imgs/projeto_mapa_mental.svg" type="image/svg+xml" style="width: 100%; height: 2000px; display: block;"></object>
+                    </div>
+                </div>
+                <style>
+                    .container-rolante {
+                        position: absolute;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        animation: rolarSlide 60s linear alternate infinite;
+                    }
+                    @keyframes rolarSlide {
+                        0% { transform: translateY(0); }
+                        100% { transform: translateY(-1500px); }
+                    }
+                </style>
+            </section>
+
+            <section data-auto-animate style="height: 100vh; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 0 !important;">
+                <h2 data-id="code-title" style="font-family: Arial, sans-serif; margin-bottom: 3vh; text-align: center;">Descrições adaptáveis</h2>
+                <div style="width: 75vw; height: 50vh; overflow: hidden; overflow-x: hidden; position: relative; border: 1px solid #333; background: #111; border-radius: 6px; margin: 0 auto;">
+                    <pre class="codigo-rolante" style="margin: 0; padding: 20px; box-sizing: border-box; background: transparent; box-shadow: none;"><code class="hljs javascript" data-trim><script type="text/template">
+                        function ajustarTexto() {
+                            const paragrafos = document.querySelectorAll('.descricao-servicos p');
+                            if (window.innerWidth >= 1024) {
+                                paragrafos[0].textContent = 'TEXTO GRANDE';
+                                paragrafos[1].textContent = 'TEXTO GRANDE';
+                            } else {
+                                paragrafos[0].textContent = 'TEXTO PEQUENO';
+                                paragrafos[1].textContent = 'TEXTO PEQUENO';
+                            }
+                        }
+                        window.addEventListener('load', ajustarTexto);
+                        window.addEventListener('resize', ajustarTexto);
+                    </script></code></pre>
+                </div>
+                <style>
+                    .codigo-rolante {
+                        position: absolute;
+                        width: 100%;
+                        left: 50%;
+                        top: 0;
+                        animation: escanearEAlinhar 10s ease-in-out alternate infinite;
+                        overflow-x: hidden !important;
+                    }
+                    @keyframes escanearEAlinhar {
+                        0% { transform: translate(-50%, 0); }
+                        100% { transform: translate(-50%, -180px); }
+                    }
+                </style>
+            </section>
+
+            <section data-auto-animate style="height: 100vh; display: flex !important; flex-direction: column !important; justify-content: center !important; align-items: center !important; padding: 0 !important;">
+                <h2 data-id="code-title" style="color: #6ecb70; font-family: Arial, sans-serif; margin-bottom: 3vh; text-align: center;">ACCORDION (FAQ)</h2>
+                <div style="width: 75vw; height: 50vh; overflow: hidden; overflow-x: hidden; position: relative; border: 1px solid #333; background: #111; border-radius: 6px; margin: 0 auto;">
+                    <pre class="codigo-rolante" style="margin: 0; padding: 20px; box-sizing: border-box; background: transparent; box-shadow: none;"><code class="hljs javascript" data-trim><script type="text/template">
+                        const perguntas = document.querySelectorAll('.perguntas');
+                        perguntas.forEach(function(pergunta) {
+                            pergunta.addEventListener('click', function() {
+                                const resposta = pergunta.nextElementSibling;
+                                if (resposta.style.display === 'block') {
+                                    resposta.style.display = 'none';
+                                    pergunta.querySelector('i').style.transform = 'rotate(0deg)';
+                                } else {
+                                    resposta.style.display = 'block';
+                                    pergunta.querySelector('i').style.transform = 'rotate(180deg)';
+                                }
+                            });
+                        });
+                    </script></code></pre>
+                </div>
+            </section>                
+
+            <section>
+                <h2>A semântica</h2>
+                <p class="fragment fade-up">Uso de tags semânticas (header, nav, main, section, footer) para melhorar a acessibilidade e o SEO do site.</p>
+            </section>
+
+            <section>
+                <h2>Padronização</h2>
+                <p class="fragment fade-up">Aplicação de padrões de design e codificação para manter a consistência visual e funcional em todas as páginas.</p>
+                <p class="fragment fade-up">Centralização de estilos globais através de variáveis CSS declaradas no root.</p>
+            </section>
+
+            <section>
+                <h2>Responsividade</h2>
+                <p class="fragment fade-up">Desenvolvimento focado na experiência do usuário e na adaptação do layout para diferentes dispositivos.</p>
+                <p class="fragment fade-up">Uso da tag picture para renderizar imagens responsivas de acordo com a resolução da tela.</p>
+                <p class="fragment fade-up">Controle de proporção visual através da propriedade aspect-ratio do CSS.</p>
+                <p class="fragment fade-up">Otimização de desempenho e redução da carga de rede com o uso do formato moderno WebP.</p>
+            </section>           
+                           
+            <section style="height: 100%;" data-background="#1e1e1e">
+                <h3 style="margin-bottom: 10px;">Fluxo do script do carrossel</h3>
+                <div style="height: 600px; overflow: hidden; position: relative;">
+                    <div class="container-rolante">
+                        <object data="imgs/diagrama_carrossel.svg" type="image/svg+xml" style="width: 100%; height: 2000px; display: block;"></object>
+                    </div>
+                </div>
+                <style>
+                    .container-rolante {
+                        position: absolute;
+                        width: 100%;
+                        top: 0;
+                        left: 0;
+                        animation: rolarSlide 40s linear;
+                    }
+                    @keyframes rolarSlide {
+                        0% { transform: translateY(0); }
+                        100% { transform: translateY(-1400px); }
+                    }
+                </style>
+            </section>
+
+            <section>
+                <h2>Concluímos agradecendo:</h2>
+                <h3 class="texto-professores">
+                    Aos professores 
+                    <span class="nome p1">Felipe,</span> 
+                    <span class="nome p2">Leandro,</span> 
+                    <span class="nome p3">Renata,</span> 
+                    <span class="nome p4">Rui</span> e 
+                    <span class="nome p5">Thaís</span>
+                </h3>
+                <h5 class="texto-professores">Aos <span class="nome p6">irmãos Berreta</span></h5>
+                <br><br>
+                <h6 class="texto-professores">
+                    Team Number One - 
+                    <span class="nome p7">Gabriel</span>, 
+                    <span class="nome p8">Mateus</span> e 
+                    <span class="nome p9">Pedro M.</span>
+                </h6>
+
+                <style>
+                    .texto-professores {
+                      color: #ffffff;
+                      font-family: sans-serif;
+                      font-weight: bold;
+                    }
+                    .texto-professores .nome {
+                      display: inline-block;
+                      color: #ffffff;
+                      transition: all 0.5s ease;
+                    }
+                    .texto-professores{
+                        font-size: 2rem !important;
+                    }
+                    .present .texto-professores .nome {
+                      animation: acenderNome 2.4s forwards ease-in-out;
+                    }
+                    .present .texto-professores .p1 { animation-delay: 0.6s; }
+                    .present .texto-professores .p2 { animation-delay: 1.4s; } 
+                    .present .texto-professores .p3 { animation-delay: 2.2s; }
+                    .present .texto-professores .p4 { animation-delay: 3.0s; }
+                    .present .texto-professores .p5 { animation-delay: 3.8s; }
+                    .present .texto-professores .p6 { animation-delay: 4.8s; } 
+                    .present .texto-professores .p7 { animation-delay: 5.8s; } 
+                    .present .texto-professores .p8 { animation-delay: 6.6s; }
+                    .present .texto-professores .p9 { animation-delay: 7.4s; }
+
+                    @keyframes acenderNome {
+                      0% {
+                        color: #ffffff;
+                        filter: drop-shadow(0 0 0px transparent);
+                        transform: scale(1);
+                      }
+                      35% {
+                        color: #00ffcc; 
+                        filter: drop-shadow(0 0 15px #00ffcc) drop-shadow(0 0 30px #00ffcc);
+                        transform: scale(1.08); 
+                      }
+                      65% {
+                        color: #00ffcc;
+                        filter: drop-shadow(0 0 10px #00ffcc);
+                        transform: scale(1.03);
+                      }
+                      100% {
+                        color: #ffffff; 
+                        filter: drop-shadow(0 0 0px transparent);
+                        transform: scale(1);
+                      }
+                    }
+                </style>
+            </section>
+        </div>
+    </div>   
+
+    <!-- Scripts via CDN (Substituindo a pasta local 'dist/') -->
+    <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://unpkg.com/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://unpkg.com/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            transition: 'slide',
+            plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+        });
+
+        Reveal.on('slidechanged', event => {
+          // Trecho do WebP (Pedro)
+          const img = document.getElementById('pedro');
+          if (img) {
+            if (!img.dataset.srcOriginal) {
+              img.dataset.srcOriginal = img.src.split('?')[0];
+            }
+            if (event.currentSlide.contains(img)) {
+              img.src = img.dataset.srcOriginal + '?t=' + new Date().getTime();
+            } else {
+              img.src = img.dataset.srcOriginal;
+            }
+          }
+
+          // Trecho do SVG Object (Berreta)
+          const vd = document.getElementById('berreta');
+          if (vd) {
+            if (!vd.dataset.dataOriginal) {
+              vd.dataset.dataOriginal = vd.data.split('?')[0];
+            }
+            if (event.currentSlide.contains(vd)) {
+              vd.data = vd.dataset.dataOriginal + '?t=' + new Date().getTime();
+            } else {
+              vd.data = vd.dataset.dataOriginal;
+            }
+          }
+        });
+    </script>
+</body>
+</html>

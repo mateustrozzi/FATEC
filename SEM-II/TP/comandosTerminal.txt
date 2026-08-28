@@ -1,0 +1,14 @@
+COMANDOS USADO NO TERMINAL:
+
+PARA CRIAR O PACKAGE:
+
+mkdir -p src/com/rpg/dkCover
+mkdir bin
+
+APÓS INSERIR CLASSES:
+
+MAIN E MENSAGEM (APENAS PARA COMPILAÇÃO):
+
+javac -sourcepath src -d bin src/com/rpg/dk_cover/*.java //COMPILA CLASSES USANDO O SRC/PACKAGE
+
+java -cp bin com.rpg.dk_cover.Main //EXECUTA A CLASSE PRINCIPAL

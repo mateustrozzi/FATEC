@@ -1,0 +1,66 @@
+#footer {
+    background-color: var(--cor-header);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#horario-funcionamento h1 {
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: var(--cor-branca);
+    font-size: var(--fs-footer-titulo);
+}
+
+#horario-funcionamento p {
+    margin-top: 15px;
+    color: var(--cor-branca);
+    font-size: var(--fs-footer-texto);
+    line-height: 2.0;
+}
+
+#formas-contato h1{
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: var(--cor-branca);
+    font-size: var(--fs-footer-titulo);
+}
+
+#formas-contato p {
+    margin-top: 15px;
+    color: var(--cor-branca);
+    font-size: var(--fs-footer-texto);
+}
+
+#formas-pagamento h1{
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: var(--cor-branca);
+    font-size: var(--fs-footer-titulo);
+}
+
+#imagens-pagamento {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+#horario-funcionamento h1{
+    font-size: 1em;
+}
+#horario-funcionamento p{
+    font-size: 0.8em;
+}
+#imagens-pagamento img {
+    width: 100px;
+    height: auto;
+}
+
+@media (min-width: 1024px) {
+    #footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}

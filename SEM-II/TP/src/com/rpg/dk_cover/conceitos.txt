@@ -1,0 +1,51 @@
+🦍 1. Heróis e Parcerias (Mocinhos)
+Representam os personagens jogáveis e suas dinâmicas de duplas ou companheiros.
+
+Personagem (Classe Mãe / Abstrata): Define os atributos e comportamentos básicos compartilhados por todos os heróis (como nome, vida, energia, atacar(), receberDano()).
+
+DonkeyKong (Herói / Tank): Especializado em força bruta e alta resistência física.
+
+DiddyKong (Herói / Ágil): Especializado em agilidade, esquiva e ataques à distância.
+
+DixieKong (Herói / Suporte): Especializada em habilidades de suporte, cura ou bônus de grupo.
+
+Parceria ou Dupla: Classe responsável por gerenciar a mecânica de alternar entre os personagens principais durante o combate (estilo clássico de DKC).
+
+AnimalAmigo (Parcerias de Suporte): Classe base para as invocações/montarias (como o rinoceronte Rambi ou o papagaio Squawks), que entram temporariamente para dar bônus ou causar dano extra.
+
+🐊 2. Inimigos, Vilões e Supervilões
+Representam as ameaças que os jogadores enfrentarão ao longo da jornada.
+
+Inimigo (Classe Mãe / Abstrata): Define a estrutura básica de oponentes (vida, força de ataque, recompensa em experiência/moedas).
+
+Kritter (Inimigo Comum): O capanga básico de infantaria, ideal para combates iniciais.
+
+Krusha (Inimigo Brutamontes): Um oponente mais resistente que exige estratégias defensivas ou ataques especiais para ser vencido.
+
+LiderKremling (Sub-chefe): Inimigos mais fortes que guardam o final de certas áreas/fases.
+
+KingKRool (Supervilão / Chefe Final): O grande antagonista do jogo, projetado para ter múltiplas fases de combate, padrões complexos de ataque e barras de vida avançadas.
+
+💥 3. Elementos de Ataque
+Representam os recursos ofensivos, feitiços ou itens consumíveis usados em batalha.
+
+ElementoAtaque (Interface ou Classe Base): Define os itens que causam dano direto aos inimigos.
+
+BarrilTNT: Funciona como uma granada ou feitiço de dano em área (explode causando dano massivo).
+
+BarrilComum: Item que pode ser arremessado diretamente no oponente.
+
+AtiradorAmendoim: Armamento à distância utilizado por personagens específicos.
+
+🍌 4. Elementos de Apoio e Cenário
+Representam itens de cura, economia, itens passivos e interações de suporte.
+
+Item (Classe Mãe / Abstrata): Base para todos os itens coletáveis e gerenciáveis no inventário.
+
+Banana / CachoBanana: O item clássico de cura (funciona como a poção de vida do RPG).
+
+MoedaDK / MoedaBanana: A moeda do jogo, utilizada para comprar melhorias ou itens na loja.
+
+BalaoVidas: Item raro que concede vidas extras ou resgate em caso de derrota ("Game Over").
+
+Inventario: Classe gerenciadora que armazena e organiza os itens coletados pelos heróis ao longo da aventura.

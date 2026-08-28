@@ -1,0 +1,112 @@
+#diferenciais {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-branca);;
+    /* padding: 20px; */
+}
+
+#diferenciais h1 {
+    text-transform: uppercase;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+#diferenciais hr {
+    width: 40px;
+    height: 3px;
+    background-color: var(--cor-primaria);
+    border: 0;
+    margin-bottom: 40px;
+}
+
+#diferenciais-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 800px;
+}
+
+.cards {
+    background-color: var(--cor-branca);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--cor-secundaria);
+}
+
+/* Remove borda do último card no mobile */
+.cards:last-child {
+    border-bottom: none;
+}
+
+/* Ajustes para tablet/desktop no grid */
+@media (min-width: 480px) and (max-width: 1023px) {
+    #diferenciais-card {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .cards:nth-child(odd) {
+        border-right: 1px solid var(--cor-secundaria);
+    }
+    
+    .cards:nth-child(1),
+    .cards:nth-child(2) {
+        border-bottom: 1px solid var(--cor-secundaria);
+    }
+    
+    .cards:nth-child(3),
+    .cards:nth-child(4) {
+        border-bottom: none;
+    }
+}
+
+.cards i {
+    color: var(--cor-primaria);
+    font-size: 40px;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+}
+
+.cards h2 {
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.cards p {
+    font-size: 15px;
+    color: var(--cor-header);;
+    line-height: 1.6;
+}
+
+@media (min-width: 1024px) {
+
+    #diferenciais {
+        width: 100%;
+        min-height: calc(100svh - var(--altura-header));
+        padding: 60px 0;
+    }
+
+    #diferenciais-card {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .cards {
+        width: 100%;
+        padding: 30px 20px;
+        border: none;
+        border-right: 1px solid #ccc;
+    }
+
+    .cards:last-child {
+        border-right: none;
+    }
+}

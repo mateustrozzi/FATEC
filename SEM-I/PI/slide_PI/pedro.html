@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digitação Perfeita - Versão Reveal</title>
+  <style>
+    body {
+      background-color: #000000;
+      margin: 0;
+      height: 100vh;   
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;   
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      border: 2px solid rgb(255, 178, 91);
+      width: 80vw;  
+      height: 80vh; 
+      padding: 1.4rem;
+      box-sizing: border-box;
+      overflow-y: auto;          
+      
+      /* Oculta a barra de rolagem */
+      scrollbar-width: none;     
+      -ms-overflow-style: none;  
+    }
+    .info::-webkit-scrollbar {
+      display: none;
+    }
+
+    h2 {
+      padding-top: 1rem;
+      color: #6ecb70;
+      font-family: Arial, sans-serif;
+      font-size: 3.5rem;
+      margin: 0;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    #frase {
+      color: #63ceff;
+      font-family: Arial, sans-serif;
+      font-size: 2.7rem;
+      font-weight: bold;
+      line-height: 4rem;
+      text-align: center;
+    }
+
+    /* Cada letra individual agora aparece instantaneamente via JS, 
+       mas mantém o efeito de subida suave */
+    .letra {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: aparecerSuave 0.2s ease-in forwards;
+    }
+
+    .espaco {
+      display: inline-block;
+      width: 0.25em; 
+    }
+
+    @keyframes aparecerSuave {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="info" id="caixa-info">
+    <h2 id="texto-animado"></h2>
+    <div id="frase"></div>
+  </div>
+ 
+  <script>
+    const caixaInfo = document.getElementById("caixa-info");
+    const elemento1 = document.getElementById("texto-animado");
+    const msg_cont = document.getElementById("frase");
+
+    const frase1 = "Boa noite a todos!"; 
+    const msg = "Meu nome é Pedro. \nTenho uma pequena dificuldade de fala, então meu primo Gabriel fará as apresentações em meu lugar. \nNo projeto, contribuí com o \ndesenvolvimento do footer e seção de serviços do site. \nAgradeço a atenção de todos e \nespero que gostem do resultado. \nMuito obrigado!";
+
+    // Junta as duas frases em uma única fila de execução estruturada
+    // Identificamos o destino (elemento1 ou msg_cont) para cada letra
+    const filaDeLetras = [];
+    
+    frase1.split("").forEach(l => filaDeLetras.push({ letra: l, alvo: elemento1 }));
+    // Adiciona uma quebra de linha simulada entre os dois blocos de texto
+    filaDeLetras.push({ letra: "\n", alvo: msg_cont }); 
+    msg.split("").forEach(l => filaDeLetras.push({ letra: l, alvo: msg_cont }));
+
+    let indiceAtual = 0;
+    const velocidadeMilissegundos = 60; // Ajuste o ritmo aqui (menor = mais rápido)
+
+    // Função de rolagem forçada clássica (Roda direto sem depender de animação CSS externa)
+    function forcarScroll() {
+      if (caixaInfo.scrollHeight > caixaInfo.clientHeight) {
+        // Rola diretamente para o fundo absoluto da caixa
+        caixaInfo.scrollTop = caixaInfo.scrollHeight;
+      }
+    }
+
+    // Função principal que digita caractere por caractere
+    function iniciarDigitacao() {
+      if (indiceAtual >= filaDeLetras.length) return; // Fim do texto
+
+      const item = filaDeLetras[indiceAtual];
+      
+      if (item.letra === "\n") {
+        item.alvo.appendChild(document.createElement("br"));
+      } else if (item.letra === " ") {
+        const span = document.createElement("span");
+        span.className = "espaco";
+        item.alvo.appendChild(span);
+      } else {
+        const span = document.createElement("span");
+        span.textContent = item.letra;
+        span.className = "letra";
+        item.alvo.appendChild(span);
+      }
+
+      // Executa a checagem física de estouro de caixa a cada letra impressa
+      forcarScroll();
+
+      indiceAtual++;
+      // Chama o próximo caractere no tempo determinado
+      setTimeout(iniciarDigitacao, velocidadeMilissegundos);
+    }
+
+    // --- CONEXÃO COM O REVEAL.JS ---
+    // Monitora quando a janela/iframe está totalmente pronta e visível
+    window.onload = function() {
+      // Dá uma folga de 500ms para o Reveal terminar de renderizar o slide na tela
+      setTimeout(iniciarDigitacao, 500);
+    };
+  </script>
+</body>
+</html>

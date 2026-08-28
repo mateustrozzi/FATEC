@@ -1,0 +1,368 @@
+/* Container Principal (Header) */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100svh;
+}
+header{
+  
+}
+.header-container {
+  display: grid;
+  /* Cria 3 colunas: as pontas se ajustam ao conteúdo, o meio ocupa o espaço restante como flex: 1 para os containers laterais e flex: 2 para o conteúdo central*/
+  grid-template-columns: max-content 1fr max-content;
+  
+  /* Alinha os itens verticalmente ao centro */
+  align-items: center; 
+  
+  background-color: #262626; /* Cor de fundo escura do print */
+  padding: 15px 50px; /* Espaçamento interno */
+  color: #ffffff;
+  font-family: sans-serif;
+  border: yellowgreen solid 4px;
+  height: 30svh;
+}
+
+/* Links de Navegação (Centralizados) */
+.nav-links {
+  /* Centraliza o bloco de links dentro da coluna do meio */
+   border: 4px rgb(30, 255, 0) solid;
+    width: 100%;
+    height: 100%;
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    /* display: flex; */
+    /* gap: 30px; */
+    /* align-items: center; */
+  
+  /* Flexbox aqui apenas para alinhar os links horizontalmente entre si */
+  /* display: flex; */
+  /* gap: 30px; Espaço entre os links */
+  display: grid;
+  place-items: center;
+  /* gap: 1em; */
+  grid-auto-flow: column; /* Faz os itens fluírem em linha (horizontal) */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  gap: 2em;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #d32f2f; /* Um tom de vermelho para o hover */
+}
+
+/* Botão de Orçamento (Direita) */
+.cta-container {
+    display: flex;
+    justify-self: end;
+    border: 4px yellow solid;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-orcamento {
+  background-color: #b32525; /* Vermelho do botão */
+  color: white;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+
+.btn-orcamento:hover {
+  background-color: #911e1e;
+}
+.hero-banner {
+  position: relative;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0) 90%), url('sua-imagem-de-caminhoes.jpg');
+  background-size: cover;
+  background-position: center right;
+  border: green solid 4px;
+  /* Configurando o Grid do Banner */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 colunas iguais */
+  grid-template-rows: 1fr auto; /* Linha superior livre, linha inferior ajustada ao texto */
+  
+  align-items: end; /* Alinha o conteúdo na base do banner */
+  padding: 60px 80px;
+}
+
+/* Posicionando o bloco de texto no Grid */
+.hero-content {
+  /* O texto vai ocupar da coluna 1 até a coluna 7 (lado esquerdo) */
+  grid-column: 1 / 7; 
+  /* Fica fixado na segunda linha (inferior) */
+  grid-row: 2; 
+  
+  /* Grid interno para alinhar os textos e as bolinhas em linhas verticais */
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 15px;
+  color: #ffffff;
+  font-family: sans-serif;
+  border: fuchsia 2px solid;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: bold;
+}
+  
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #e0e0e0;
+  line-height: 1.5;
+}
+
+/* Indicadores do Carrossel (Bolinhas) */
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot.active {
+  background-color: #ffffff;
+}
+
+/* Setas de navegação nas extremidades */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 0, 0, 0.685);
+  border: none;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.arrow-left { left: 20px; top: 90%;}
+.arrow-right { right: 20px; top: 90%;}
+
+.hero-banner {
+    position: relative;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0) 100%), url('https://blog.fretebras.com.br/wp-content/uploads/2022/08/Fretebras_Veiculos_pesados_img-blog-800x340.png');
+    background-size: cover;
+    background-position: center left;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    padding: 60px 80px;
+    justify-items: center;
+    align-items: end;
+   
+}
+.logo{
+      display: flex;
+    justify-self: end;
+    border: 4px yellow solid;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Define a animação de surgir subindo */
+@keyframes subirEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .nav-links a {
+  opacity: 0; 
+  animation: subirEntrada 0.5s ease forwards;
+}
+
+
+.nav-links a:nth-child(1) { animation-delay: 0.1s; }
+.nav-links a:nth-child(2) { animation-delay: 0.2s; }
+.nav-links a:nth-child(3) { animation-delay: 0.3s; }
+.nav-links a:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes pulsar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.cta-container .btn-orcamento {
+  animation: pulsar 0.5s backwards ease-in-out;
+} */
+/* 1. Animação de Entrada dos Links (Efeito Cascata) */
+@keyframes subirEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-links a {
+  opacity: 0;
+  animation: subirEntrada 0.5s ease forwards; /* Cada uma dura 0.5s */
+}
+
+/* Atrasos em cascata */
+.nav-links a:nth-child(1) { animation-delay: 0.1s; } /* Termina em 0.6s */
+.nav-links a:nth-child(2) { animation-delay: 0.2s; } /* Termina em 0.7s */
+.nav-links a:nth-child(3) { animation-delay: 0.3s; } /* Termina em 0.8s */
+.nav-links a:nth-child(4) { animation-delay: 0.4s; } /* Termina em 0.9s */
+
+
+/* 2. Animação do Botão Pulsar */
+@keyframes pulsar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.cta-container .btn-orcamento {
+  /* Mudamos para 'infinite' (opcional) e ajustamos o delay para 0.9s */
+  animation: pulsar 0.5s ease-in-out;
+  
+  
+  /* O pulso espera 0.9s (tempo do último link terminar) para começar */
+  animation-delay: 0.9s; 
+}
+.nav-links a{
+  border-bottom: 2px solid #d32f2f00;
+   border-top: 2px solid #d32f2f00;
+   color: #ffffff;
+  padding: 12px 0;
+  font-weight: 800;
+  
+  transition: border-bottom 0.8s, padding 0.4s, border-top 1s, color 0.3s;
+}
+.nav-links a:hover{
+  border-bottom: 2px solid #d32f2f;
+  padding: 12px 0;  
+  border-top: 2px solid #d32f2f;
+  color: #d32f2f;
+}
+@media (max-width: 400px) {
+  .nav-links{
+    display: none;
+  }
+  .cta-container{
+    display: none;
+  }
+  .header-container{
+    grid-template-columns: 3fr;
+  }
+  .logo{
+    display: flex;
+    justify-self: end;
+    border: 4px yellow solid;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-content{
+    grid-column: 7/7;
+    grid-row: 3;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 15px;
+    color: #ffffff;
+    font-family: sans-serif;
+    border: fuchsia 2px solid;
+    justify-items: center;
+    position: absolute;
+    width: 80svw;
+    bottom: 4em;
+  }
+}
+
+@media (max-height: 600px) {
+  .nav-links{
+    display: none;
+  }
+  .cta-container{
+    display: none;
+  }
+  .header-container{
+    grid-template-columns: 3fr;
+  }
+  .logo{
+    display: flex;
+    justify-self: end;
+    border: 4px yellow solid;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-content{
+    grid-column: 7/7;
+    grid-row: 3;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 15px;
+    color: #ffffff;
+    font-family: sans-serif;
+    border: fuchsia 2px solid;
+    justify-items: center;
+    position: absolute;
+    width: 80svw;
+    bottom: 2em;
+  }
+  .hero-banner{
+    height: 70svh;    
+  }
+  .hero-content h1{
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+  }
+   .hero-content p{
+    font-size: 1rem;
+    text-align: left;
+   }
+   header-container {
+    height: 25svh;
+   }
+   .svg-logo{
+    width: 80px;
+    height: 80px;
+   }
+}
+@media (min-height: 600px){
+  .hero-banner{
+    height: 70svh;
+  }
+}

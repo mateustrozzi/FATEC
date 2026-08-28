@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gabriel, Mateus, Pedro Joaquim">
+<!-- nomes em ordem alfabética -->
+    <title>Irmãos Berreta</title>
+    <!-- CDN ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/root.css">
+    <link rel="stylesheet" href="assets/css/carrossel.css">   
+    <link rel="stylesheet" href="assets/css/swipe-carrossel.css">
+    <link rel="stylesheet" href="assets/css/style_empresa.css">
+    <link rel="stylesheet" href="assets/css/style_servicos.css">
+    <link rel="stylesheet" href="assets/css/style_diferenciais.css">
+    <link rel="stylesheet" href="assets/css/style_contato.css">
+    <link rel="stylesheet" href="assets/css/style_footer.css">
+
+    <!-- script efeito acordeon -->     
+
+    <script src="assets/js/script.js" defer></script>
+</head>    
+
+<body>
+    <header>
+        <div class="fixo">
+            <div class="logo" id="logo-svg">
+                <object data="assets/imgs/svgs/logoA.svg" type="image/svg+xml" width="250" height="250"></object>
+            </div>
+            <nav class="nav-links">
+                <span class="btn-fechar">&times;</span> <!-- btn fechar menu hambúrguer-->
+                <a href="#container-servicos">Serviços</a>
+                <a href="#descricao">Empresa</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <div class="cta-container">
+                <img src="assets/imgs/svgs/hamb.svg" alt="menu" class="hamb">
+                <a href="https://wa.me/551935812129" target="_blank" class="btn">Orçamento</a>
+                <a href="#" class="btn-orcamento">Solicite um orçamento</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="secao-hero">
+    <!-- container do carrossel -->
+    <div id="carrossel-container">
+      
+      <!-- Trilha: contém os slides lado a lado -->
+      <div id="trilha-slides">
+
+        <!-- SLIDE 1 -->
+        <div class="slide">
+          <!-- Texto animado sobre o carrossel -->
+            <div class="slide-texto">
+            <h1 class="titulo-imagem">Manutenção programada</h1> <!--Aqui é de acordo com o slide-->
+            <p>Cuide da saúde da sua frota. Temos os melhores especialistas da região!</p>
+          </div>
+          <picture>
+            <!-- wide: telas largas (≥ 1200px) -->
+            <source media="(min-width: 1200px)" srcset="assets/imgs/carrossel/wide/01.webp" />
+            <!-- tablet: telas médias (≥ 768px) -->
+            <source media="(min-width: 658px)"  srcset="assets/imgs/carrossel/tablet/01.webp" />
+            <!-- mobile: padrão (menor que 768px) -->
+            <img class="slide-imagem"
+                 src="assets/imgs/carrossel/mobile/01.webp"
+                 alt="Imagem 1 do carrossel"/>
+          </picture>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide">
+          <!-- Texto animado sobre o carrossel -->
+            <div class="slide-texto">
+            <h1 class="titulo-imagem">Grandes distâncias</h1> <!--Aqui é de acordo com o slide-->
+            <p>Não arrisque-se em grandes distâncias sem revisão.</p>
+          </div>
+          <picture>
+            <source media="(min-width: 1200px)" srcset="assets/imgs/carrossel/wide/02.webp" />
+            <source media="(min-width: 768px)"  srcset="assets/imgs/carrossel/tablet/02.webp" />
+            <img class="slide-imagem"
+                 src="assets/imgs/carrossel/mobile/02.webp"
+                 alt="Imagem 2 do carrossel"
+                 loading="lazy" />
+          </picture>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide">
+          <!-- Texto animado sobre o carrossel -->
+            <div class="slide-texto">
+            <h1 class="titulo-imagem">Manutenção preventiva</h1> <!--Aqui é de acordo com o slide-->
+            <p>Manutenção em bombas, comandos e cilindros hidráulicos.</p>
+          </div>
+          <picture>
+            <source media="(min-width: 1200px)" srcset="assets/imgs/carrossel/wide/03.webp" />
+            <source media="(min-width: 768px)"  srcset="assets/imgs/carrossel/tablet/03.webp" />
+            <img class="slide-imagem"
+                 src="assets/imgs/carrossel/mobile/03.webp"
+                 alt="Imagem 3 do carrossel"
+                 loading="lazy" />
+          </picture>
+        </div>
+
+        <!-- SLIDE 4 -->
+        <div class="slide">
+          <!-- Texto animado sobre o carrossel -->
+            <div class="slide-texto">
+            <h1 class="titulo-imagem">Manutenção corretiva</h1> <!--Aqui é de acordo com o slide-->
+            <p>Serviços de torno, fresa e mandrilamento de componentes.</p>
+          </div>
+          <picture>
+            <source media="(min-width: 1200px)" srcset="assets/imgs/carrossel/wide/04.webp" />
+            <source media="(min-width: 768px)"  srcset="assets/imgs/carrossel/tablet/04.webp" />
+            <img class="slide-imagem"
+                 src="assets/imgs/carrossel/mobile/04.webp"
+                 alt="Imagem 4 do carrossel"
+                 loading="lazy" />
+          </picture>
+        </div>
+
+        <!-- SLIDE 5 -->
+        <div class="slide">
+          <!-- Texto animado sobre o carrossel -->
+            <div class="slide-texto">
+            <h1 class="titulo-imagem">Força e potência</h1> <!--Aqui é de acordo com o slide-->
+            <p>Potência bruta e precisão técnica é com a gente!</p>
+          </div>
+          <picture>
+            <source media="(min-width: 1200px)" srcset="assets/imgs/carrossel/wide/05.webp" />
+            <source media="(min-width: 768px)"  srcset="assets/imgs/carrossel/tablet/05.webp" />
+            <img class="slide-imagem"
+                 src="assets/imgs/carrossel/mobile/05.webp"
+                 alt="Imagem 5 do carrossel"
+                 loading="lazy" />
+          </picture>
+        </div>
+
+      </div>
+      <!-- /trilha-slides -->
+
+      <!-- Botão: slide anterior -->
+      <button id="btn-anterior"
+              class="btn-navegacao">
+        <!-- Seta para a esquerda em SVG -->        
+        <object data="assets/imgs/svgs/esq.svg" type="image/svg+xml" width="40" height="40"></object>
+      </button>
+
+      <!-- Botão: próximo slide -->
+      <button id="btn-proximo"
+              class="btn-navegacao">
+        <!-- Seta para a direita em SVG -->
+        
+        <object data="assets/imgs/svgs/dir.svg" type="image/svg+xml" width="40" height="40"></object>
+      </button>
+
+      <!-- Bolinhas indicadoras de slide (bullets) -->
+      <div id="indicadores"></div>
+
+    </div>
+    <!-- /carrossel-container -->
+
+  </section>
+
+  <!-- Seção de serviços -->
+
+    <section id="container-servicos">
+        <h1>Nossos serviços</h1>
+
+        <hr>
+
+        <div id="container-cards">
+            <!-- 1 Card (Manutenções de motores a diesel) -->
+            <div class="servicos">
+                <div class="img-wrapper">
+                    <img src="assets/imgs/servicos//manutencao.jpg" alt="manutencao de motor">
+                    <i class="fa-solid fa-oil-can"></i>
+                </div>
+                <div class="descricao-servicos">
+                    <h2>Manutenção de Motores a Diesel</h2>
+                    <p>Manutenção preventiva e corretiva em motores a diesel, garantindo desempenho, economia e maior
+                        vida útil.</p>
+                </div>
+            </div>
+            <!-- 2 Card (Embreagem e Câmbio) -->
+            <div class="servicos">
+                <div class="img-wrapper">
+                    <img src="assets/imgs/servicos//embreagem.jpg" alt="embreagem e cambio">
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+                <div class="descricao-servicos">
+                    <h2>Embreagem e Câmbio</h2>
+                    <p>Troca e reparo de embreagens e câmbios com qualidade e agilidade no atendimento.</p>
+                </div>
+            </div>
+            <!-- 3 Card (Manutenção e reparo de diferencial) -->
+            <div class="servicos">
+                <div class="img-wrapper">
+                    <img src="assets/imgs/servicos/diferencial.webp" alt="manutencao e reparo de diferencial">
+                    <i class="fa-solid fa-wrench"></i>
+                </div>
+                <div class="descricao-servicos">
+                    <h2>Manutenção e Reparo de Diferencial</h2>
+                    <p>Diagnóstico, reparo e regulagem de diferenciais para garantir segurança e performance.</p>
+                </div>
+            </div>
+            <!-- 4 Card (Freios e Suspensões) -->
+            <div class="servicos">
+                <div class="img-wrapper">
+                    <img src="assets/imgs/servicos/freios.jpg" alt="freios e suspensoes">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="descricao-servicos">
+                    <h2>Freios e Suspensões</h2>
+                    <p>Revisão e manutenção de freios e suspensões para mais segurança na estrada.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Seção da empresa -->
+    <section id="empresa">
+        <!-- Essa parte seria o lado esquerdo, contendo o sobre da empresa-->
+        <div id="lado-esquerdo">
+
+            <!-- Descrição da empresa -->
+            <div id="descricao">
+                <p id="sobre-nos">Sobre nós</p>
+                <hr>
+                <h1>Tradição, qualidade e confiança que movem seu caminho.</h1>
+                <p>A Autopeças Mecânica São Jorge, conhecida tradicionalmente como Irmãos Berretta, carrega quase meio
+                    século de história, dedicação e paixão pelo universo dos caminhões. Fundada em 1977 pelos irmãos
+                    José e Jorge Berretta, a empresa nasceu em um pequeno galpão em Porto Ferreira e, com muito
+                    trabalho, honestidade e compromisso, se tornou referência regional em mecânica e autopeças para
+                    caminhões. Ao longo dos anos, a oficina acompanhou a evolução do setor, unindo experiência,
+                    tecnologia e atendimento de confiança para oferecer soluções completas aos clientes. Mais do que uma
+                    empresa, a São Jorge construiu relações duradouras, formando profissionais, conquistando amizades e
+                    participando diretamente do desenvolvimento da cidade. Hoje, instalada na Avenida João Miziara,
+                    atende clientes de toda a região, mantendo os mesmos valores que deram origem à empresa: trabalho
+                    sério, tradição familiar e respeito por cada cliente que passa pela oficina.</p>
+            </div>
+
+            <!-- Icons, com algumas vantagens de fazer serviços conosco -->
+            <div id="icons-empresa">
+                <p><i class="fa-solid fa-calendar-days"></i>+ 45 anos <br> de experiência</p>
+                <p><i class="fa-solid fa-users"></i>Equipe <br> especializada</p>
+                <p><i class="fa-solid fa-shield-halved"></i>Atendimento <br> ágil e confiável</p>
+            </div>
+        </div>
+
+        <!-- Imagem da fachada da loja -->
+        <div id="imagem">
+            <img src="assets/imgs/empresa/fundo_loja.jpeg" alt="Fachada da Loja">
+        </div>
+    </section>
+
+    <!-- Seção dos diferenciais -->
+    <section id="diferenciais">
+        <!-- Titulo -->
+        <h1>Nossos Diferenciais</h1>
+        <hr>
+
+        <!-- Div com os 4 cards-->
+        <div id="diferenciais-card">
+            <!-- Card das peças de qualidade -->
+            <div class="cards">
+                <i class="fa-solid fa-ranking-star"></i>
+                <h2>Peças de qualidade</h2>
+                <p>Trabalhamos com peças de alta qualidade e procedência garantida.</p>
+                
+            </div>
+
+            <!-- Card de socorro na estrada-->
+            <div class="cards">
+                <i class="fa-solid fa-road"></i>
+                <h2>Socorro na estrada</h2>
+                <p>Atendimento 24h para socorro e assistência na estrada</p>
+            </div>
+
+            <!-- Card dos mecânicos-->
+            <div class="cards">
+                <i class="fa-solid fa-user-gear"></i>
+                <h2>Mecânicos especializados</h2>
+                <p>Profissionais treinados e qualificados para oferecer o melhor serviço</p>
+            </div>
+
+            <!-- Card do atendimento -->
+            <div class="cards">
+                <i class="fa-regular fa-clock"></i>
+                <h2>Atendimento rápido</h2>
+                <p>Agilidade nos serviços para reduzir o tempo de parada do seu veículo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção do contato -->
+    <section id="contato">
+        <!-- Section sobre as perguntas e respostas (Faqs) -->
+        <div id="faqs">
+            <h1>Perguntas Frequentes</h1>
+            <hr>
+
+            <!-- 1 Pergunta -->
+            <button class="perguntas">
+                Vocês antendem emergência na estrada?
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <p class="respostas">Sim! Realizamos atendimento emergencial na estrada para ajudar caminhões e veículos
+                diesel com problemas mecânicos. Entre em contato conosco para verificar disponibilidade e localização do
+                atendimento.</p>
+
+            <!-- 2 Pergunta -->
+            <button class="perguntas">
+                Quais tipos de veículos vocês atendem?
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <p class="respostas">Atendemos caminhões, carretas, ônibus, vans, máquinas agrícolas e veículos a diesel em
+                geral, nacionais e importados.</p>
+
+            <!-- 3 Pergunta -->
+            <button class="perguntas">
+                Quais são as formas de pagamento?
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <p class="respostas">Aceitamos PIX, dinheiro, cartões de débito e crédito. Entre em contato para mais
+                informações sobre as condições de pagamento.</p>
+
+            <!-- 4 Pergunta -->
+            <button class="perguntas">
+                É necessário agendar o serviço?
+                <i class="fa-solid fa-angle-down"></i>
+            </button>
+            <p class="respostas">Para serviços maiores e manutenções preventivas, recomendamos agendamento. Já
+                emergências e atendimentos rápidos podem ser realizados conforme disponibilidade.</p>
+
+            <!-- Botão de solicitar orçamento, com link para o Whatsapp -->
+            <a id="orcamento" href="https://wa.me/551935812129"
+                target="_blank">
+                <i class="fa-brands fa-whatsapp fa-xl"></i>
+                Solicite um orçamento
+            </a>
+        </div>
+
+        <!-- Section contendo informações da empresa, contendo telefones e localização -->
+        <div id="info-empresa">
+            <div class="descricoes-container">
+                <h1>Entre em contato</h1>
+                <hr>
+                <!-- Dados de telefone e endereço da empresa -->
+                <p class="descricoes"><i class="fa-brands fa-whatsapp fa-lg"></i> (19) 3581-2129</p>
+                <p class="descricoes"><i class="fa-solid fa-phone fa-lg"></i> (19) 3581-2129</p>
+                <p class="descricoes"><i class="fa-brands fa-instagram fa-lg"></i> irmaosberreta</p>
+                <p class="descricoes"><i class="fa-solid fa-location-dot fa-lg"></i> Av: João José Attab Miziara,
+                    2200<br>Areia Branca - Porto Ferreira (SP)</p>
+            </div>
+
+            <!-- Mapa de localização da empresa, com o código que o google maps disponibiliza (iframe) -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.0146904215326!2d-47.490269927210974!3d-21.873332389421986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b803d341ba11d5%3A0x391af3b11f3d7566!2sAv.%20Jo%C3%A3o%20Jos%C3%A9%20Attab%20Miziara%2C%202200%2C%20Porto%20Ferreira%20-%20SP%2C%2013660-000!5e0!3m2!1spt-BR!2sbr!4v1777763158467!5m2!1spt-BR!2sbr"
+                width="100%" height="300" style="border: 3px solid white" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- Section contendo meio que um "slogan", e a imagem do caminhão -->
+        <div id="container-frase">
+            <div id="imagem-caminhao">
+                <!-- Imagem do caminhão em forma de ícone -->
+                <i class="fa-regular fa-truck fa-5x" style="color: white;"></i>
+
+                <!-- Texto ao lado da imagem do caminhão -->
+                <div id="frase">
+                    <h1>Seu caminhão merece o melhor cuidado!</h1>
+                    <p>Fale com nossa equipe e mantenha a sua frota sempre em movimento.</p>
+                </div>
+            </div>
+
+            <!-- Botão de solicitar orçamento, com link para o Whatsapp -->
+            <a href="https://wa.me/551935812129" target="_blank">Solicite um orçamento</a>
+        </div>
+    </section>
+
+    <!-- Seção footer (rodapé) -->
+     <footer id="footer">
+        
+        <!-- Informações do horário de funcionamento -->
+        <div id="horario-funcionamento">
+            <h1>Horário de funcionamento</h1>
+            <p>Segunda-feira	07:30–11:00, 12:30–17:00 <br>
+            Terça-feira	07:30–11:00, 12:30–18:00 <br>
+            Quarta-feira	07:30–11:00, 12:30–18:00 <br>
+            Quinta-feira	07:30–11:00, 12:30–18:00 <br>
+            Sexta-feira	    07:30–11:00, 12:00–18:00 <br>
+            </p>
+        </div>
+
+        <!-- Formas de contato -->
+        <div id="formas-contato">
+            <h1>Formas de contato</h1>
+            <p><i class="fa-solid fa-phone fa-lg"></i> (19) 3581-2129</p>
+            <p><i class="fa-solid fa-envelope"></i> contato@iberreta.com.br</p>
+            <p><i class="fa-brands fa-instagram fa-lg"></i> @irmaosberreta</p>
+        </div>
+
+        <!-- Formas de pagamento -->
+        <div id="formas-pagamento">
+            <h1>Formas de pagamento </h1>
+            <!-- Imagens de pagamento -->
+            <div id="imagens-pagamento">
+                <img src="assets/imgs/footer/master.webp" alt="bandeira de cartão master">
+                <img src="assets/imgs/footer/visa.webp" alt="bandeira de cartão visa">
+                <img src="assets/imgs/footer/american.webp" alt="bandeira de cartão american express">
+                <img src="assets/imgs/footer/pix.webp" alt="foto do emblema do pix">
+            </div>
+        </div>
+
+     </footer>
+  
+  
+
+    </main>
+    <script src="assets/js/menu.js"></script>
+    <!-- scripts do carrossel -->
+    <script src="assets/js/carrossel-hero-bridge.js"></script>
+    <script src="assets/js/carrossel.js"></script>
+    <script src="assets/js/swipe-carrossel.js"></script>
+
+</body>
+</html>
