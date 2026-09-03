@@ -2,20 +2,32 @@ package com.rpg.dk_cover;
 
 public class Personagem{
     private String nome;
-    private String categoria; //vilão ou herói
-    private String energia;
+    private String categoria; //supervilão, vilão ou herói
+    private int energia;
     private int vida;
 
     public void atacar(Personagem perAtacado){
-        atacar(perAtacado);
+        System.out.println(this.nome + " atacou "+perAtacado.getNome());
     }
-    public void perderVida(Personagem perPerdedor){
+
+    public String getNome(){
+        return this.nome;
+    }
+    public void setNome(String novoNome){
+        this.nome = novoNome;
+    }
+
+    public int perderVida(Personagem perPerdedor){
         //perde vida quando é atacado
+        return 0;
+        
     }
-    public void receberVida(){
+    public int receberVida(){
         //recebe vida do balão de vida
+        return vida;
     }
     public void recolherItem(){
         //coleta de itens, bananas por exemplo
     }
+
 }
